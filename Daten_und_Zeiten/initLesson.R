@@ -1,3 +1,6 @@
+# remove motivational message
+options(swirl_is_fun = FALSE)
+
 ### MAY END UP USING THIS AT SOME POINT... ###
 
 # Code used to create dataset

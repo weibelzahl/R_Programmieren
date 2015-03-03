@@ -1,6 +1,9 @@
+# remove motivational message
+options(swirl_is_fun = FALSE)
+
 # Path to installed lesson
-.lessonpath <- file.path(path.package("swirl"), "Courses", "R_Programming",
-                         "lapply_and_sapply")
+.lessonpath <- file.path(path.package("swirl"), "Courses", "R_Programmieren",
+                         "lapply_und_sapply")
 # Path to dataset
 .datapath <- file.path(.lessonpath, "flag.data.txt")
 # Load dataset
