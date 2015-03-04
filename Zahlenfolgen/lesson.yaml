@@ -7,48 +7,37 @@
   Version: 2.2.0
 
 - Class: text
-  Output: In this lesson, you'll learn how to create sequences of numbers in R.
+  Output: In dieser Übung werden Sie lernen, eine Zahlenfolge in R zu erstellen.
 
 - Class: cmd_question
-  Output: The simplest way to create a sequence of numbers in R is by using the `:`
-    operator. Type 1:20 to see how it works.
+  Output: Am einfachsten geht das mit dem Operator `:`. Tippen Sie '1:20', um das auszuprobieren.
   CorrectAnswer: '1:20'
   AnswerTests: omnitest(correctExpr='1:20')
-  Hint: Type 1:20 with no spaces. Make sure to use a regular colon and NOT a semi-colon.
+  Hint: Tippen Sie einfach '1:20' ohne Leerzeichen und ohne Anführungszeichen. Achtung, das Zeichen in der Mitte ist ein Doppelpunkt und kein Strichpunkt.
 
 - Class: cmd_question
-  Output: That gave us every integer between (and including) 1 and 20. We could also
-    use it to create a sequence of real numbers. For example, try pi:10.
+  Output: Wir erhalten eine Folge ganzer Zahlen zwischen 1 (eingeschlossen) und 20 (eingeschlossen). Mit dem gleichen Befehl kann man aber auch eine Folge von reellen Zahlen erstellen. Probieren Sie z.B. mal pi:10.
   CorrectAnswer: pi:10
   AnswerTests: omnitest(correctExpr='pi:10')
-  Hint: Enter pi:10 and see what happens. pi is a predefined constant in R that takes
-    on the value 3.1415....
+  Hint: Geben Sie pi:10 ein und schauen Sie einfach mal was passiert. pi ist eine vordefinierte Konstante und hat wie zu erwarten den Wert 3.1415... .
 
 - Class: text
-  Output: The result is a vector of real numbers starting with pi (3.142...) and increasing
-    in increments of 1. The upper limit of 10 is never reached, since the next number
-    in our sequence would be greater than 10.
+  Output: Das Ergebnis ist ein Vektor reeller Zahlen. Am Anfang steht die Zahl pi. Danach folgen Zahlen die um jeweils 1 erhöht sind. Die obere Grenze von 10 wird nie erreicht, weil die nächste Zahl in der Folge schon größer als 10 wäre.
 
 - Class: cmd_question
-  Output: 'What happens if we do 15:1? Give it a try to find out.'
+  Output: 'Und was passiert, wenn wir 15:1 eingeben? Probieren Sie es aus.'
   CorrectAnswer: '15:1'
   AnswerTests: omnitest(correctExpr='15:1')
-  Hint: Type 15:1 and press Enter.
+  Hint: Tippen Sie 15:1 ein und drücken Sie die Eingabetaste.
 
 - Class: text
-  Output: It counted backwards in increments of 1! It's unlikely we'd want this behavior,
-    but nonetheless it's good to know how it could happen.
+  Output: R hat in Einerschritten rückwärts gezählt! Dieses Verhalten wird eher selten gebraucht, aber es schadet nicht, das mal gesehen zu haben.
 
 - Class: text
-  Output: "Remember that if you have questions about a particular R function, you
-    can access its documentation with a question mark followed by the function name:
-    ?function_name_here. However, in the case of an operator like the colon used above,
-    you must enclose the symbol in backticks like this: ?`:`. (NOTE: The backtick
-    (`) key is generally located in the top left corner of a keyboard, above the Tab
-    key. If you don't have a backtick key, you can use regular quotes.)"
+  Output: 'Zur Erinnerung: Sollten Sie eine Frage zu einer Funktion haben, können Sie die Dokumentation dieser Funktion mit einem Fragezeichen gefolgt vom Namen der Funktion öffnen: ?name_der_funktion. Hier haben wir allerdings einen Sonderfall, weil der Doppelpunkt ein Sonderzeichen ist. Dieses muss in Anführungszeichen gesetzt werden, also z.B. so: ?":".'
 
 - Class: cmd_question
-  Output: Pull up the documentation for `:` now.
+  Output: Öffnen Sie nun die Dokumentation des ':' Operators.
   CorrectAnswer: ?`:`
   AnswerTests: ANY_of_exprs('?`:`', "?':'", '?":"')
   Hint: "In order to view the documentation for a symbol like the colon operator,
