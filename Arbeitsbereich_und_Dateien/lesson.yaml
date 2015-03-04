@@ -7,7 +7,7 @@
   Version: 0.1.2
 
 - Class: text
-  Output: In dieser Übung werden Sie lernen Ihren lokalen Arbeitsbereich in R zu untersuchen. Sie werden das Zusammenspiel von Arbeitsbereich und lokalem Dateisystem explorieren.
+  Output: In dieser Übung werden Sie lernen, Ihren lokalen Arbeitsbereich in R zu untersuchen. Sie werden das Zusammenspiel von Arbeitsbereich und lokalem Dateisystem explorieren.
 
 - Class: text
   Output: Die verschiedenen Betriebssysteme unterscheiden sich in der Art wie sie mit Dateipfaden und ähnlichem umgehen, darum unterscheiden sich unter Umständen auch die Ausgaben eines Befehls, wenn dieser auf unterschiedlichen Rechnern angewendet wird.
@@ -28,13 +28,13 @@
   Hint: Tippen Sie 'ls()', um alle Objekte in Ihrem lokalen Arbeitsbereich zu sehen.
 
 - Class: text
-  Output: Einige Befehle in R sind die gleichen, die auch in Unix verwendet werden. Noch ein Grund sich mal genauer mit Unix zu beschäftigen.
+  Output: Einige Befehle in R sind die selben, die auch in Unix verwendet werden. Noch ein Grund sich mal genauer mit Unix zu beschäftigen.
 
 - Class: text
-  Output: In den beiden bisherigen Fragen haben wir Ihnen immer genau vorgegeben, wie der einzutippende Befehl lautet, aber das ist eigentlich ein wenig zu einfach. Das sollten wir ändern. 
+  Output: In den beiden bisherigen Fragen haben wir Ihnen immer genau vorgegeben, wie der einzutippende Befehl lautet, aber das ist eigentlich ein wenig zu einfach. Das sollten wir anders machen. 
 
 - Class: text
-  Output: Stattdessen werden wir die Fragen meist so stellen, dass man den entsprechenden Befehl auch mit einer Suche im Web finden kann. Bei der letzten Frage hätte eine Suche nach "R Liste Objekte Arbeitsbereich" funktioniert.
+  Output: Stattdessen werden wir die Fragen meist so stellen, dass man den entsprechenden Befehl auch mit einer Suche im Web finden kann. Bei der letzten Frage hätte z.B. eine Suche nach "R Liste Objekte Arbeitsbereich" funktioniert.
 
 - Class: cmd_question
   Output: 'Weisen Sie der Variable x den Wert 9 zu. Der Befehl lautet: x <- 9 (das sollten Sie bereits wissen).'
@@ -43,7 +43,7 @@
   Hint: Tippen Sie 'x <- 9', um x den Wert 9 zuzuweisen.
 
 - Class: text
-  Output: Da Sie nun das Objekt x erstellt haben, sollten Sie x aufgelistet bekommen, wenn Sie den Befehl ls() verwenden. Um dies zu tun müssen Sie zunächst diese swirl-Übung unterbrechen. Das geht mit dem Befehl play(). Wenn Sie den ls()-Befehl ausprobiert haben, kommen Sie mit nxt() wieder hierher zurück. Probieren Sie das mal aus (zunächst müssen Sie die Eingabetaste drücken, um auf die Kommandozeile zu kommen)!
+  Output: Da Sie nun das Objekt x erstellt haben, sollten Sie x aufgelistet bekommen, wenn Sie den Befehl ls() verwenden. Um dies zu tun, müssen Sie zunächst diese swirl-Übung unterbrechen. Das geht mit dem Befehl play(). Wenn Sie den ls()-Befehl ausprobiert haben, kommen Sie mit nxt() wieder hierher zurück. Probieren Sie das mal aus (zunächst müssen Sie allerdings die Eingabetaste drücken, um auf die Kommandozeile zu kommen)!
 
 - Class: cmd_question
   Output: Erstellen Sie nun eine Liste aller Dateien in Ihrem Arbeitsverzeichnis. Welcher Befehl ist dafür geeignet?
@@ -70,13 +70,13 @@
 #  Hint: Type list.files(recursive = TRUE) to list all the files in your working directory recursively.
 
 - Class: text
-  Output: Wen man die Funktion args() auf den Namen einer anderen Funktion anwendet, erhält man eine Liste der Argumente, die man bei dieser Funktion anwenden kann.
+  Output: Wenn man die Funktion args() auf den Namen einer anderen Funktion anwendet, erhält man eine Liste der Argumente, die man bei dieser Funktion anwenden kann.
 
 - Class: cmd_question
   Output: Verwenden Sie die Funktion args(), um herauszufinden, welche Argumente bei der Funktion list.files() angewendet werden können.
   CorrectAnswer: args(list.files)
   AnswerTests: omnitest(correctExpr='args(list.files)')
-  Hint: Tippen Sie 'args(list.files)', um eine Liste der anwendbaren Argumente zu erhalten.
+  Hint: Tippen Sie 'args(list.files)', um eine Liste der anwendbaren Argumente zu erhalten. Die Klammern am Ende des Funktionsnamens werden weggelassen.
 
 - Class: cmd_question
   Output: Weisen Sie nun den Wert des aktuellen Arbeitsverzeichnisses einer Variable mit dem Namen "old.dir" zu.
@@ -85,10 +85,10 @@
   Hint: Tippen Sie 'old.dir <- getwd()', um den Wert des aktuellen Arbeitsverzeichnisses der Variable "old.dir" zuzuweisen.
 
 - Class: text
-  Output: Wir werden old.dir am Ende dieser Übung verwenden, um den Anfangszustand wieder herzustellen. Viele Funktionen wie getwd() haben die nützliche Eigenschaft, dass sie die Antwort als Ergebnis ausgeben.
+  Output: Wir werden old.dir am Ende dieser Übung verwenden, um den Anfangszustand wieder herzustellen. Viele Funktionen wie getwd() haben die nützliche Eigenschaft, dass sie die Antwort direkt als Ergebnis ausgeben.
 
 - Class: cmd_question
-  Output: Erstellen Sie ein neues Verzeichnis innerhalb des aktuellen Arbeitsverzeichnisses mit dem Namen "testdir". Finden Sie heraus wie das geht.
+  Output: Erstellen Sie ein neues Verzeichnis innerhalb des aktuellen Arbeitsverzeichnisses mit dem Namen "testdir". Finden Sie selbst heraus, wie das geht.
   CorrectAnswer: dir.create("testdir")
   AnswerTests: omnitest(correctExpr='dir.create("testdir")')
   Hint: Tippen Sie 'dir.create("testdir")', um im aktuellen Arbeitsverzeichnis ein neues Verzeichnis mit dem Namen "testdir" zu erstellen.
@@ -97,7 +97,7 @@
   Output: Alles weitere werden wir in diesem neuen Verzeichnis machen und dieses am Ende dann wieder löschen. Frei nach dem Motto "Take only pictures, leave only footprints."
 
 - Class: cmd_question
-  Output: Machen Sie nun "testdir" zu Ihrem Arbeitsverzeichnis. Finden Sie heraus wie das geht.
+  Output: Machen Sie nun "testdir" zu Ihrem Arbeitsverzeichnis. Finden Sie heraus, wie das geht.
   CorrectAnswer: setwd("testdir")
   AnswerTests: any_of_exprs('setwd("testdir")', 'setwd("testdir/")')
   Hint: Verwenden Sie den Befehl 'setwd("testdir")', um das Arbeitsverzeichnis auf "testdir" zu ändern.
@@ -106,7 +106,7 @@
   Output: Üblicherweise werden Sie Ihr Arbeitsverzeichnis dorthin legen, wo es vernünftig erscheint, also z.B. auf ein Verzeichnis, das für das Projekt an dem Sie gerade arbeiten erstellt wurde. Außerdem bietet R Studio eine hervorragende Möglichkeit, die eigenen Arbeitsergebnisse in Paketen abzulegen, dies führt aber zu weit und kann im Rahmen dieser Übung nicht behandelt werden.
 
 - Class: cmd_question
-  Output: Erstellen Sie in Ihrem Arbeitsverzeichnis eine Datei mit dem Namen "mytest.R". Finden Sie heraus wie das geht.
+  Output: Erstellen Sie in Ihrem Arbeitsverzeichnis eine Datei mit dem Namen "mytest.R". Finden Sie heraus, wie das geht.
   CorrectAnswer: file.create("mytest.R")
   AnswerTests: omnitest(correctExpr='file.create("mytest.R")')
   Hint: Der Befehl file.create("mytest.R") macht genau das!
@@ -125,23 +125,23 @@
   Hint: Verwenden Sie "file.exists("mytest.R")", um zu überprüfen, ob die Datei existiert.
 
 - Class: text
-  Output: Auf den ersten Blick mag dieser Befehl überflüssig erscheinen. Wenn man jedoch ein Programm schreibt, bei dem nacheinander eine Reihe von Datendateien abgearbeitet werden sollen, empfiehlt es sich jeweils vorher zu prüfen, ob die Datei denn überhaupt existiert.
+  Output: Auf den ersten Blick mag dieser Befehl überflüssig erscheinen. Wenn man jedoch ein Programm schreibt, bei dem nacheinander eine Reihe von Datendateien abgearbeitet werden sollen, empfiehlt es sich jeweils vorher zu prüfen, ob die Datei denn überhaupt existiert, damit es nicht zu Fehlermeldungen kommt.
 
 - Class: cmd_question
   Output: Als nächstes wollen Sie mehr über die Datei "mytest.R" erfahren. Welcher Befehl und welches dazugehörige Argument gibt Informationen über die Datei "mytest.R" aus?
   CorrectAnswer: file.info("mytest.R")
   AnswerTests: omnitest(correctExpr='file.info("mytest.R")')
-  Hint: Das geht mit dem Befehl "file.info("mytest.R")"!
+  Hint: Das geht mit dem Befehl 'file.info("mytest.R")'!
 
 # Might add some work with the object returned by file.info.
 # I need to think hard about how to allow answers that include
 # the argument names.
 
 - Class: text
-  Output: Der Befehl kann übrigens auch zusammen mit dem $ Operator verwendet werden, um an spezifische Informationen zu gelangen - also z.B. in der Form file.info("mytest.R")$mode.
+  Output: Der Befehl kann übrigens auch zusammen mit dem $ Operator verwendet werden, um gezielt bestimmte Informationen abzufragen - also z.B. in der Form file.info("mytest.R")$mode.
 
 - Class: cmd_question
-  Output: Ändern Sie nun den Dateinamen von "mytest.R" zu "mytest2.R". Finden Sie heraus wie das geht.
+  Output: Ändern Sie nun den Dateinamen von "mytest.R" zu "mytest2.R". Finden Sie selbst heraus, wie das geht.
   CorrectAnswer: file.rename("mytest.R", "mytest2.R")
   AnswerTests: any_of_exprs('file.rename("mytest.R", "mytest2.R")', 'file.rename(from = "mytest.R", to = "mytest2.R")')
   Hint: 'Die richtige Antwort lautet: file.rename("mytest.R", "mytest2.R"). Auch hier hilft Google weiter, wenn man z.B. nach "file change name in R". Bei einer Suche in deutscher Sprache, muss man evtl. etwas länger suchen.'
@@ -150,40 +150,43 @@
   Output: "Auch hier gilt: Natürlich wäre es viel leichter, den Dateinamen direkt im Betriebssystem zu ändern. Jetzt wissen Sie allerdings auch, wie Sie dies innerhalb von R erledigen können, was bei aufwändigeren Projekten sehr nützlich sein kann. Wenn Sie nun versuchen würden, die Datei mytest.R zu löschen, würde das nicht klappen, weil diese ja soeben umbenannt wurde und darum nicht mehr vorhanden ist."
 
 - Class: cmd_question
-  Output: Erstellen Sie nun eine Kopie der Datei "mytest2.R" mit dem Namen "mytest3.R". Finden Sie heraus wie das geht.
+  Output: Erstellen Sie nun eine Kopie der Datei "mytest2.R" mit dem Namen "mytest3.R". Finden Sie heraus, wie das geht.
   CorrectAnswer: file.copy("mytest2.R", "mytest3.R")
   AnswerTests: any_of_exprs('file.copy("mytest2.R", "mytest3.R")', 'file.copy(from = "mytest2.R", to = "mytest3.R")')
   Hint: Am einfachsten geht das mit file.copy("mytest2.R", "mytest3.R").
 
 - Class: text
-  Output: Jetzt liegen zwei Dateien in dem Verzeichnis. Das scheint erstmal eher banal. Aber stellen Sie sich vor, Sie würden mit -zig, oder gar mit Millionen von Dateien arbeiten. Dann wird es fast unausweichlich, die Verarbeitung mit Hilfe eines kleinen Programms zu erledigen. Übrigens, nur zur Erinnerung, Sie können diese Übung jederzeit mit dem Befehl play() vorübergehen unterbrechen und dann mit nxt() wieder zurückkommen.
+  Output: Jetzt liegen zwei Dateien in dem Verzeichnis. Das erscheint erstmal eher banal. Aber stellen Sie sich vor, Sie würden mit Hunderten, oder gar mit Millionen von Dateien arbeiten. Dann wird es fast unausweichlich, die Verarbeitung mit Hilfe eines kleinen Programms zu erledigen. Übrigens, nur zur Erinnerung, Sie können diese Übung jederzeit mit dem Befehl play() vorübergehend unterbrechen und dann mit nxt() wieder zurückkommen.
 
 #- Class: cmd_question
-#  Output: Lassen Sie nun den vollständigen Pfadnamen der Datei "mytest3.R" ausgeben. Finden Sie heraus wie das geht.
+#  Output: Lassen Sie nun den vollständigen Pfadnamen der Datei "mytest3.R" ausgeben. Finden Sie heraus, wie das geht.
 #  CorrectAnswer: file.path("mytest3.R")
 #  AnswerTests: omnitest(correctExpr='file.path("mytest3.R")')
 #  Hint: Verwenden Sie file.path("mytest3.R").
 
 - Class: cmd_question
-  Output: Und jetzt eine knifflige Aufgabe. Erstellen Sie ein neues Verzeichnis innerhalb des Arbeitsverzeichnisses mit dem Namen "testdir2" und darin ein Unterverzeichnis mit dem Namen "testdir3". Das ganze auch noch in nur einem einzigen Befehl. Finden Sie heraus wie das geht.
+  Output: Und jetzt eine knifflige Aufgabe. Erstellen Sie ein neues Verzeichnis innerhalb des Arbeitsverzeichnisses mit dem Namen "testdir2" und darin ein Unterverzeichnis mit dem Namen "testdir3". Das Ganze auch noch in nur einem einzigen Befehl. Finden Sie heraus, wie das geht.
   CorrectAnswer: dir.create("testdir2/testdir3", recursive = TRUE)
   AnswerTests: omnitest(correctExpr='dir.create("testdir2/testdir3", recursive = TRUE)')
   Hint: Verwenden Sie dir.create("testdir2/testdir3", recursive = TRUE). Wenn Sie das Argument "recursive=TRUE" nicht angegeben haben, sah es trotzdem so aus als hätte der Befehl funktioniert. Woran liegt das?
 
+- Class: text
+  Output: Super, das war wirklich ein wenig knifflig.
+  
 - Class: cmd_question
-  Output: Löschen Sie das Verzeichnis "testdir2" wieder. Finden Sie heraus wie das geht.
+  Output: Löschen Sie das Verzeichnis "testdir2" wieder. Finden Sie heraus, wie das geht.
   CorrectAnswer: unlink("testdir2", recursive = TRUE)
   AnswerTests: omnitest(correctExpr='unlink("testdir2", recursive = TRUE)')
   Hint: Verwenden Sie den Befehl unlink("testdir2", recursive = TRUE). 
 
 - Class: text
-  Output: Auch hier ist wieder das Argument "recursive = TRUE" notwendig. Andernfalls gibt R eine Warnung aus, dass das Verzeichnis nicht leer ist. R geht also davon aus, dass wenn Sie nicht explizit angeben, dass das Löschen rekursiv erfolgen soll, Ihnen nicht bewusst ist, dass das Verzeichnis nicht leer ist. Deshalb versucht R Sie davor zu bewahren, einen Fehler zu machen.
+  Output: 'Auch hier ist wieder das Argument "recursive = TRUE" notwendig. Andernfalls gibt R eine Warnung aus, dass das Verzeichnis nicht leer ist. R geht also von der folgenden Annahme aus: Wenn Sie nicht explizit angeben, dass das Löschen rekursiv erfolgen soll, ist Ihnen vermutlich nicht bewusst, dass das Verzeichnis nicht leer ist. Deshalb versucht R Sie davor zu bewahren, einen Fehler zu machen.'
 
 - Class: text
   Output: Und warum heißt der Befehl "unlink" und nicht wie man vielleicht erwarten könnte "dir.delete" oder "dir.remove"? Das hat vor allem historische Gründe. In Unix-Systemen hieß der Befehl traditioneller Weise immer "unlink".
 
 - Class: cmd_question
-  Output: Stellen Sie jetzt das Arbeitsverzeichnis wieder auf den ursprünglichen Namen zurück. Wir hatten den Pfadnamen in der Variable old.dir abgespeichert. Den Befehl, um das Arbeitsverzeichnis zu ändern, kennen Sie bereits.
+  Output: Stellen Sie jetzt das Arbeitsverzeichnis wieder auf den ursprünglichen Namen zurück. Wir hatten den Pfadnamen in der Variable old.dir abgespeichert. Den Befehl, um das Arbeitsverzeichnis zu ändern, kennen Sie ja bereits.
   CorrectAnswer: setwd(old.dir)
   AnswerTests: omnitest(correctExpr='setwd(old.dir)')
   Hint: Verwenden Sie setwd(old.dir).
@@ -197,5 +200,25 @@
   AnswerTests: omnitest(correctExpr='unlink("testdir", recursive = TRUE)')
   Hint: Verwenden Sie unlink("testdir", recursive = TRUE).
 
-- Class: text
-  Output: In dieser Übung haben Sie gelernt mit dem Arbeitsbereich und dem Dateisystem in R umzugehen.
+- Class: cmd_question
+  Output: Sie haben nun viel über den Arbeitsbereich und das Dateisystem in R gelernt. Die Umgebung R Studio unterstützt Sie bei diesen Aufgaben. Vermutlich haben Sie bereits gemerkt, dass Sie im Fenster rechts oben immer alle verwendeten Objekte des Arbeitsbereichs im Blick behalten können. Erstellen Sie zum Ausprobieren eine neue Variable y und weisen Ihr den Wert 3 zu.
+  CorrectAnswer: y <- 3
+  AnswerTests: omnitest(correctExpr='y <- 3')
+  Hint: Tippen Sie 'y <- 3', um y den Wert 9 zuzuweisen.
+
+- Class: mult_question
+  Output: Im Fenster 'Environment' sollten Sie nun eine Zeile für y und den Wert 3 sehen.
+  CorrectAnswer: Ja, habe ich gesehen!
+  AnswerChoices: Ja, habe ich gesehen!; Wo?
+  AnswerTests: omnitest(correctVal='Ja, habe ich gesehen!')
+  Hint: 'R Studio ist normalerweise in vier Fenster unterteilt. Im Fenster rechts oben finden Sie eine Liste der Daten ("Data"), Werte ("Values") und Funktionen ("Functions").'  
+
+- Class: mult_question
+  Output: Im Fenster darunter, also rechts unten werden normalerweise die Hilfetexte und die Grafiken gezeigt. Mit Hilfe des Reiters 'Files', kann man sich aber auch das Arbeitsverzeichnis anzeigen lassen. Probieren Sie das mal aus.
+  CorrectAnswer: Ja, hat geklappt!
+  AnswerChoices: Ja, hat geklappt!; Wo?
+  AnswerTests: omnitest(correctVal='Ja, hat geklappt!')
+  Hint: "R Studio ist normalerweise in vier Fenster unterteilt. Das Fenster rechts unten hat fünf Reiter. Einer davon heißt 'Files'. Klicken Sie einfach darauf."
+
+- Class: text  
+  Output: In dieser Übung haben Sie gelernt mit dem Arbeitsbereich und dem Dateisystem in R und R Studio umzugehen. 
