@@ -7,55 +7,50 @@
   Version: 2.2.11
 
 - Class: text
-  Output: "Achtung:  One of the great advantages of using a statistical programming language like R is its vast collection of tools for simulating random numbers."
-
-- Class: text
-  Output: This lesson assumes familiarity with a few common probability distributions, but these topics will only be discussed with respect to random number generation. Even if you have no prior experience with these concepts, you should be able to complete the lesson and understand the main ideas.
+  Output: Einer der großen Vorteile der Verwendung von statistischen Programmiersprachen wie R ist die Vielzahl an Möglichkeiten, Zufallszahlen zu simulieren.
 
 - Class: cmd_question
-  Output: The first function we'll use to generate random numbers is sample(). Use ?sample to pull up the documentation.
-  CorrectAnswer: ?sample
+  Output: Die erste Funktion, die wir benutzen werden um Zufallszahlen zu generieren, ist sample(). Nutzen Sie den Befehl ?sample, um die Dokumentation aufzurufen.
   AnswerTests: omnitest(correctExpr='?sample')
-  Hint: Use '?sample' to pull up the documentation for the sample() function.
+  Hint: Nutzen Sie den Befehl '?sample', um die Dokumentation für die Funktion sample() aufzurufen. 
 
 - Class: cmd_question
-  Output: "Let's simulate rolling four six-sided dice: sample(1:6, 4, replace = TRUE)."
+  Output: "Wir wollen nun einen viermaligen Würfelwurf mit der Funktion sample(1:6, 4, replace = TRUE) simulieren. Probieren Sie dies jetzt aus."
   CorrectAnswer: sample(1:6, 4, replace = TRUE)
   AnswerTests: match_call('sample(1:6, 4, replace = TRUE)')
-  Hint: Type sample(1:6, 4, replace = TRUE) to simulate rolling four six-sided dice.
+  Hint: Tippen Sie sample(1:6, 4, replace = TRUE) in die Konsole, um einen viermaligen Würfelwurf zu simulieren.
 
 - Class: cmd_question
-  Output: Now repeat the command to see how your result differs. (The probability of rolling the exact same result is (1/6)^4 = 0.00077, which is pretty small!)
+  Output: "Wiederholen Sie nun den Befehl, um zu sehen, wie sich das neue Ergebnis vom vorherigen unterscheidet (Die Wahrscheinlichkeit für exakt dasselbe Ergebnis ist extrem gering: (1/6)^4 = 0.00077 = 0.077%)."
   CorrectAnswer: sample(1:6, 4, replace = TRUE)
   AnswerTests: match_call('sample(1:6, 4, replace = TRUE)')
-  Hint: Type sample(1:6, 4, replace = TRUE) to simulate rolling four six-sided dice again.
+  Hint: Tippen Sie sample(1:6, 4, replace = TRUE) in die Konsole, um einen viermaligen Würfelwurf zu simulieren.
 
 - Class: text
-  Output: sample(1:6, 4, replace = TRUE) instructs R to randomly select four numbers between 1 and 6, WITH replacement. Sampling with replacement simply means that each number is "replaced" after it is selected, so that the same number can show up more than once. This is what we want here, since what you roll on one die shouldn't affect what you roll on any of the others.
+  Output: 'Der Befehl sample(1:6, 4, replace = TRUE) lässt R zufällig vier Zahlen zwischen 1 und 6 ziehen. "replace = TRUE" steht für das Ziehen MIT Zurücklegen. Jedes Element, das gezogen wurde, wird wieder "zurückgelegt", sodass dieselbe Zahl mehr als einmal vorkommen kann. Genau das wollen wir hier, da bei jedem Würfelwurf alle Zahlen zwischen 1 und 6 gewürfelt werden können, unabhängig davon, welche Zahl beim ersten Mal gewürfelt wurde.'
 
 - Class: cmd_question
-  Output: Now sample 10 numbers between 1 and 20, WITHOUT replacement. To sample without replacement, simply leave off the 'replace' argument.
+  Output: 'Lassen Sie R nun 10 Zahlen zwischen 1 und 20 OHNE Zurücklegen ziehen. Wenn Sie das Argument "replace" weglassen, zieht R automatisch ohne Zurücklegen.'
   CorrectAnswer: sample(1:20, 10)
   AnswerTests: match_call('sample(1:20, 10)')
-  Hint: Type sample(1:20, 10) to sample 10 numbers between 1 and 20, without replacement.
+  Hint: Tippen Sie sample(1:20, 10) in die Konsole, um zufällig und ohne Zurücklegen 10 Zahlen zwischen 1 und 20 zu ziehen.
 
 - Class: text
-  Output: Since the last command sampled without replacement, no number appears more than once in the output.
+  Output: Da wir R befohlen haben, ohne Zurücklegen zu ziehen, kommt im Output keine Zahl mehr als einmal vor.
 
 - Class: cmd_question
-  Output: LETTERS is a predefined variable in R containing a vector of all 26 letters of the English alphabet. Take a look at it now.
-  CorrectAnswer: LETTERS
+  Output: LETTERS ist eine vordefinierte Variable in R, die einen Vektor mit allen 26 Buchstaben des englischen Alphabets enthält. Schauen Sie sich die Variable jetzt an.
   AnswerTests: omnitest(correctExpr='LETTERS')
-  Hint: Type LETTERS to print its contents to the console.
+  Hint: Tippen Sie LETTERS, um den Inhalt der Variablen in der Konsole zu sehen.
 
 - Class: cmd_question
-  Output: The sample() function can also be used to permute, or rearrange, the elements of a vector. For example, try sample(LETTERS) to permute all 26 letters of the English alphabet.
+  Output: Die Funktion sample() kann auch genutzt werden, um die Elemente eines Vektors zu permutieren bzw. neu anzuordnen. Lassen Sie R mit sample(LETTERS) alle 26 Buchstaben des englischen Alphabets neu anordnen.
   CorrectAnswer: sample(LETTERS)
   AnswerTests: omnitest(correctExpr='sample(LETTERS)')
-  Hint: Use sample(LETTERS) to permute all 26 letters of the English alphabet.
+  Hint: Tippen Sie sample(LETTERS), um alle 26 Buchstaben des englischen Alphabets neu anzuordnen.
 
 - Class: text
-  Output: This is identical to taking a sample of size 26 from LETTERS, without replacement. When the 'size' argument to sample() is not specified, R takes a sample equal in size to the vector from which you are sampling.
+  Output: Dies ist dasselbe, wie eine Stichprobe der Größe 26 aus der Menge LETTERS (ohne Zurücklegen)zu ziehen. Wenn das Argument 'size' der Funktion sample() nicht spezifiziert wird, zieht R eine Stichprobe von der Größe des Vektors, aus dem gezogen wird.
 
 - Class: text
   Output: Now, suppose we want to simulate 100 flips of an unfair two-sided coin. This particular coin has a 0.3 probability of landing 'tails' and a 0.7 probability of landing 'heads'.
