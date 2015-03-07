@@ -7,7 +7,13 @@
   Version: 2.2.0
 
 - Class: text
-  Output: In dieser Übung werden wir uns die Grundlagen der R-Programmierung genauer ansehen.
+  Output: Willkommen in R! Dieser Kurs soll Ihnen dabei helfen die ersten Schritte in R zu unternehmen. Mit R steht Ihnen ein unglaublich mächtiges und vielseitiges Werkzeug zur Verfügung. Die ungewohnte Art der Eingabe und das Erlernen der richtigen Syntax erleben viele Einsteiger zunächst als Hürde, aber sehr bald werden auch Sie mit diesem Werkzeug umzugehen wissen und es zu schätzen lernen.
+
+- Class: text
+  Output: Dieser Kurs wurde für Studierende der PFH Private Hochschule Göttingen (www.pfh.de ) zusammengestellt. Er beruht auf dem swirl-Kurs R_Programming, dessen Inhalte übersetzt und an die Bedürfnisse der Studierenden des Moduls Statistik 1 angepasst wurden. Wie der Originalkurs steht natürlich auch dieser Kurs unter der freien Lizenz GPL 3.0 und Sie dürfen diesen Kurs gerne im Rahmen dieser Lizenz verändern und weitergeben.
+  
+- Class: text
+  Output: In dieser ersten Übung werden wir uns die Grundlagen der R-Programmierung genauer ansehen.
 
 - Class: text
   Output: Sollten Sie zu irgendeinem Zeitpunkt mehr Informationen zu einem bestimmten Thema 
