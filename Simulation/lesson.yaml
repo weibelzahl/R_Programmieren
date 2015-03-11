@@ -54,115 +54,115 @@
   Output: Dies ist dasselbe, wie eine Stichprobe der Größe 26 aus der Menge LETTERS (ohne Zurücklegen)zu ziehen. Wenn das Argument 'size' der Funktion sample() nicht spezifiziert wird, zieht R eine Stichprobe von der Größe des Vektors, aus dem gezogen wird.
 
 - Class: text
-  Output: Now, suppose we want to simulate 100 flips of an unfair two-sided coin. This particular coin has a 0.3 probability of landing 'tails' and a 0.7 probability of landing 'heads'.
+  Output: Nehmen wir an, wir wollten einen 100-fachen Münzwurf mit einer unfairen Münze simulieren. Bei dieser Münze ist die Wahrscheinlichkeit für Zahl 0.3 und für Kopf 0.7.
 
 - Class: cmd_question
-  Output: Let the value 0 represent tails and the value 1 represent heads. Use sample() to draw a sample of size 100 from the vector c(0,1), with replacement. Since the coin is unfair, we must attach specific probabilities to the values 0 (tails) and 1 (heads) with a fourth argument, prob = c(0.3, 0.7). Assign the result to a new variable called flips.
+  Output: "Der Wert 0 soll das Ergebnis Zahl repräsentieren, der Wert 1 das Ergebnis Kopf. Nutzen Sie die Funktion sample() um eine Stichprobe der Größe 100 aus dem Vektor c(0,1) zu ziehen (mit Zurücklegen). Da es sich um eine unfaire Münze handelt, müssen wir die spezifischen Wahrscheinlichkeiten der Werte 0 (Zahl) und 1 (Kopf) angeben. Hierfür benötigen wir ein viertes Argument: prob = c(0.3,0.7). Ordnen Sie das Ergebnis einer neuen Variable namens flips zu." 
   CorrectAnswer: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))
   AnswerTests: match_call('flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))')
-  Hint: 'The following command will produce 100 flips of an unfair coin and assign the result: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))'
+  Hint: 'Der folgende Befehl simuliert 100 Münzwürfe einer unfairen Münze und weist das Ergebnis der Variablen flips zu: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))'
 
 - Class: cmd_question
-  Output: View the contents of the flips variable.
+  Output: Schauen Sie sich den Inhalt der Variablen flips an.
   CorrectAnswer: flips
   AnswerTests: omnitest(correctExpr='flips')
-  Hint: Just type flips to view its contents.
+  Hint: Tippen Sie flips, um den Inhalt der Variablen zu sehen.
 
 - Class: cmd_question
-  Output: Since we set the probability of landing heads on any given flip to be 0.7, we'd expect approximately 70 of our coin flips to have the value 1. Count the actual number of 1s contained in flips using the sum() function.
+  Output: Da wir die Wahrscheinlichkeit für Kopf für jeden einzelnen Wurf auf 0.7 gesetzt haben, erwarten wir, dass ungefähr 70 der Würfe den Wert 1 aufweisen. Zählen Sie die tatsächliche Anzahl der 1en in der Variablen flips mit der Funktion sum().
   CorrectAnswer: sum(flips)
   AnswerTests: omnitest(correctExpr='sum(flips)')
-  Hint: sum(flips) will add up all the 1s and 0s, giving you the total number of 1s in flips.
+  Hint: sum(flips) summiert alle 1en und 0en, sodass das Ergebnis der absoluten Häufigkeit der 1en in der Variablen flips entspricht.
 
 - Class: cmd_question
-  Output: A coin flip is a binary outcome (0 or 1) and we are performing 100 independent trials (coin flips), so we can use use rbinom() to simulate a binomial random variable. Pull up the documentation for rbinom() using ?rbinom.
+  Output: Unser Münzwurfexperiment ist ein Zufallsexperiment mit dichotomen Ausgang (0 oder 1) und 100 unabhängigen Durchgängen (Münzwürfen), sodass wir auch die Funktion rbinom() nutzen können, um diese binomial verteilte Zufallsvariable zu simulieren. Rufen Sie mit ?rbinom die Dokumentation für die Funktion rbinom() auf.
   CorrectAnswer: ?rbinom
   AnswerTests: omnitest(correctExpr='?rbinom')
-  Hint: Type ?rbinom to pull up the help file for rbinom().
+  Hint: Tippen Sie ?rbinom um die Hilfeseite für rbinom() aufzurufen.
 
 - Class: text
-  Output: Each probability distribution in R has an r*** function (for "random"), a d*** function (for "density"), a p*** (for "probability"), and q*** (for "quantile"). We are most interested in the r*** functions in this lesson, but I encourage you to explore the others on your own.
+  Output: 'Jede Wahrscheinlichkeitsfunktion hat in R eine r***-Funktion (für "random", d.h. zufällig), eine d***-Funktion (für "density", d.h. Dichte), eine p***-Funktion (für "probability", d.h. Wahrscheinlichkeit) und eine q***-Funktion (für "quantile", also die Quantile). In dieser Übung geht es vor allem um die r***-Funktionen, auf die p***- und d***-Funktionen gehen wir in der letzten Aufgabe der Einsendeaufgabe "Verteilungen und Stichprobenverteilungen" ein.'
 
 - Class: cmd_question
-  Output: A binomial random variable represents the number of 'successes' (heads) in a given number of independent 'trials' (coin flips). Therefore, we can generate a single random variable that represents the number of heads in 100 flips of our unfair coin using rbinom(1, size = 100, prob = 0.7). Note that you only specify the probability of 'success' (heads) and NOT the probability of 'failure' (tails). Try it now.
+  Output: "Eine binomial-verteilte Zufallsvariable repräsentiert die Anzahl von Erfolgen (hier: Kopfwürfe) bei einer gegebenen Anzahl von unabhängigen Versuchen (hier: Münzwürfe). Deswegen können wir mit der Funktion rbinom(1, size=100, prob = 0.7) eine einzige Zufallsvariable generieren, die die Anzahl der Kopf-Würfe bei unserem 100-fachen Münzwurf repräsentiert. Beachten Sie, dass Sie nur die Wahrscheinlichkeit der Erfolge (hier: Kopfwürfe) angeben und nicht die Wahrscheinlichkeit der Misserfolge (Zahlwürfe). Probieren Sie den Befehl jetzt aus."
   CorrectAnswer: rbinom(1, size = 100, prob = 0.7)
   AnswerTests: match_call('rbinom(1, size = 100, prob = 0.7)')
-  Hint: Call rbinom() with n = 1, size = 100, and prob = 0.7.
+  Hint: Verwenden Sie die Funktion rbinom() mit n = 1, size = 100 und prob = 0.7.
 
 - Class: cmd_question
-  Output: Equivalently, if we want to see all of the 0s and 1s, we can request 100 observations, each of size 1, with success probability of 0.7. Give it a try, assigning the result to a new variable called flips2.
+  Output: Wenn wir alle 0en und 1en sehen wollen, können wir auf ähnliche Art und Weise verfahren. Dafür setzen wir die n=100 und size=1. Die Erfolgswahrscheinlichkeit bleibt bei 0.7. Probieren Sie den Befehl jetzt aus und weisen Sie das Ergebnis der Variable flips2 zu.  
   CorrectAnswer: flips2 <- rbinom(100, size = 1, prob = 0.7)
   AnswerTests: match_call('flips2 <- rbinom(100, size = 1, prob = 0.7)')
-  Hint: Call rbinom() with n = 100, size = 1, and prob = 0.7 and assign the result to flips2.
+  Hint: Verwenden Sie die Funktion rbinom() mit n = 100, size = 1 und prob = 0.7 und weisen Sie das Ergebnis einer Variable mit Namen flips2 zu.
 
 - Class: cmd_question
-  Output: View the contents of flips2.
+  Output: Schauen Sie sich den Inhalt der Variablen flips2 an.
   CorrectAnswer: flips2
   AnswerTests: omnitest('flips2')
-  Hint: Type flips2 to view its contents.
+  Hint: Tippen Sie flips2, um den Inhalt der Variablen zu sehen.
 
 - Class: cmd_question
-  Output: Now use sum() to count the number of 1s (heads) in flips2. It should be close to 70!
+  Output: Benutzen Sie nun die Funktion sum() um die absolute Häufigkeit der 1en (Kopfwürfe) in der Variablen flips2 zu berechnen. Das Ergebnis sollte in der Nähe von 70 sein.
   CorrectAnswer: sum(flips2)
   AnswerTests: omnitest('sum(flips2)')
-  Hint: Use sum(flips2) to count the number of 1s.
+  Hint: Benutzen Sie den Befehl sum(flips2) um die Anzahl an 1en zu berechnen.
 
 - Class: cmd_question
-  Output: Similar to rbinom(), we can use R to simulate random numbers from many other probability distributions. Pull up the documentation for rnorm() now.
+  Output: Es gibt in R mit rbinom() vergleichbare Funktionen für die Simulation von Zufallszahlen, die auf anderen Wahrscheinlichkeitsfunktionen beruhen. Rufen Sie jetzt die Dokumentation für rnorm() auf.
   CorrectAnswer: ?rnorm
   AnswerTests: omnitest('?rnorm')
-  Hint: Type ?rnorm to view its help file.
+  Hint: Tippen Sie ?rnorm um die Dokumentation aufzurufen.
 
 - Class: cmd_question
-  Output: The standard normal distribution has mean 0 and standard deviation 1. As you can see under the 'Usage' section in the documentation, the default values for the 'mean' and 'sd' arguments to rnorm() are 0 and 1, respectively. Thus, rnorm(10) will generate 10 random numbers from a standard normal distribution. Give it a try.
+  Output: Die Standardnormalverteilung hat einen Mittelwert von 0 und eine Standardabweichung von 1. Wie Sie der Erklärung unter der Überschrift 'Usage' entnehmen können, sind die voreingestellten Werte für die Argumente 'mean' und 'sd' der Funktion rnorm() 0 und 1. Deswegen generiert der Befehl rnorm(10) 10 Zufallszahlen einer Standardnormalverteilung. Testen Sie den Befehl jetzt aus.
   CorrectAnswer: rnorm(10)
   AnswerTests: omnitest('rnorm(10)')
-  Hint: Use rnorm(10) to generate 10 random numbers from a standard normal distribution.
+  Hint: Verwenden Sie den Befehl rnorm(10) um 10 Zufallszahlen einer Standardnormalverteilung zu generieren.
 
 - Class: cmd_question
-  Output: Now do the same, except with a mean of 100 and a standard deviation of 25.
+  Output: Wiederholen Sie die Simulation, aber gehen Sie nun von einer Normalverteilung mit einem Mittelwert von 100 und einer  Standardabweichung von 25 aus.
   CorrectAnswer: rnorm(10, 100, 25)
   AnswerTests: match_call('rnorm(10, 100, 25)')
-  Hint: Use rnorm(10, mean = 100, sd = 25) to generate 10 random numbers from a normal distribution with mean 100 and standard deviation 25.
+  Hint: Verwenden Sie den Befehl rnorm(10, mean = 100, sd = 25).
 
 - Class: text
-  Output: Finally, what if we want to simulate 100 *groups* of random numbers, each containing 5 values generated from a Poisson distribution with mean 10? Let's start with one group of 5 numbers, then I'll show you how to repeat the operation 100 times in a convenient and compact way.
+  Output: Wie können wir vorgehen, wenn wir 100 "Gruppen" von Zufallszahlen mit je 5 Werten einer Poissonverteilung mit Mittelwert 10 simulieren wollen? Beginnen wir mit der Simulation einer Gruppe von 5 Zahlen. Danach zeige ich Ihnen, wie Sie die Operation 100x auf praktische Art und Weise wiederholen können.
 
 - Class: cmd_question
-  Output: Generate 5 random values from a Poisson distribution with mean 10. Check out the documentation for rpois() if you need help.
+  Output: Generieren Sie fünf Zufallszahlen einer Poissonverteilung mit Mittelwert 10. Nutzen Sie die Dokumentation für die Funktion rpois(), wenn Sie Hilfe benötigen.
   CorrectAnswer: rpois(5, 10)
   AnswerTests: match_call('rpois(5, 10)')
-  Hint: Use rpois(5, 10) to generate 5 random numbers from a Poisson distribution with mean 10.
+  Hint: Verwenden Sie den Befehl rpois(5, 10) um 5 Zufallszahlen einer Poissonverteilung mit Mittelwert 10 zu generieren.
 
 - Class: cmd_question
-  Output: Now use replicate(100, rpois(5, 10)) to perform this operation 100 times. Store the result in a new variable called my_pois.
+  Output: Verwenden Sie nun den Befehl replicate(100, rpois(5, 10)) um die Operation 100x zu wiederholen. Speichern Sie das Ergebnis in einer neuen Variable mit dem Namen my_pois.
   CorrectAnswer: my_pois <- replicate(100, rpois(5, 10))
   AnswerTests: match_call('my_pois <- replicate(100, rpois(5, 10))')
-  Hint: my_pois <- replicate(100, rpois(5, 10)) will repeat the operation 100 times and store the result.
+  Hint: my_pois <- replicate(100, rpois(5, 10)) wiederholt die Operation 100x und speichert das Ergebnis in der Variablen my_pois.
 
 - Class: cmd_question
-  Output: Take a look at the contents of my_pois.
+  Output: Werfen Sie einen Blick auf den Inhalt von my_pois.
   CorrectAnswer: my_pois
   AnswerTests: omnitest('my_pois')
-  Hint: Print the contents of my_pois to the console.
+  Hint: Tippen Sie my_pois in die Konsole.
 
 - Class: cmd_question
-  Output: replicate() created a matrix, each column of which contains 5 random numbers generated from a Poisson distribution with mean 10. Now we can find the mean of each column in my_pois using the colMeans() function. Store the result in a variable called cm.
+  Output: Die Funktion replicate() hat eine Matrix erzeugt, wobei jede Spalte 5 Zufallszahlen enthält, die auf einer Poissonverteilung mit Mittelwert 10 beruhen. Nun können wir den Mittelwert jeder Spalte von my_pois mit der Funktion colMeans() berechnen. Speichern Sie das Ergebnis in der Variablen cm.
   CorrectAnswer: cm <- colMeans(my_pois)
   AnswerTests: omnitest('cm <- colMeans(my_pois)')
-  Hint: Use cm <- colMeans(my_pois) to create a vector of column means, storing the result in cm.
+  Hint: Verwenden Sie den Befehl cm <- colMeans(my_pois)
 
 - Class: cmd_question
-  Output: And let's take a look at the distribution of our column means by plotting a histogram with hist(cm).
+  Output: Werfen Sie außerdem einen Blick auf die Verteilung der Spaltenmittelwerte, indem Sie mit dem Befehl hist(cm) ein Histogramm erstellen.
   CorrectAnswer: hist(cm)
   AnswerTests: omnitest('hist(cm)')
-  Hint: hist(cm) will give you a histogram of column means.
+  Hint: hist(cm) erstellt ein Histogramm der Spaltenmittelwerte.
 
 - Class: text
-  Output: Looks like our column means are almost normally distributed, right? That's the Central Limit Theorem at work, but that's a lesson for another day!
+  Output: Die Spaltenmittelwerte, d.h. die Stichprobenmittelwerte der 100 Stichproben mit n=5, die wir gezogen haben, folgen fast einer Normalverteilung. Dies ist also ein gutes Beispiel für den Zentralen Grenzwertsatz!
 
 - Class: text
-  Output: All of the standard probability distributions are built into R, including exponential (rexp()), chi-squared (rchisq()), gamma (rgamma()), .... Well, you see the pattern.
+  Output: Alle üblichen Wahrscheinlichkeitsverteilungen sind in R vorhanden, unter anderem die Exponentialfunktion (rexp()), die Chi-Quadrat-Funktion (rchisq()), die Gamma-Funktion (rgamma()), usw. 
 
 - Class: text
-  Output: Simulation is practically a field of its own and we've only skimmed the surface of what's possible. I encourage you to explore these and other functions further on your own.
+  Output: Simulation ist ein weites Feld und wir haben nur an der Oberfläche von dem, was möglich ist, gekratzt. Ich ermutige Sie, die Wahrscheinlichkeitsfunktionen auf eigene Faust weiter auszuprobieren!
