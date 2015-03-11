@@ -11,6 +11,7 @@
 
 - Class: cmd_question
   Output: Die erste Funktion, die wir benutzen werden um Zufallszahlen zu generieren, ist sample(). Nutzen Sie den Befehl ?sample, um die Dokumentation aufzurufen.
+  CorrectAnswer: ?sample
   AnswerTests: omnitest(correctExpr='?sample')
   Hint: Nutzen Sie den Befehl '?sample', um die Dokumentation für die Funktion sample() aufzurufen. 
 
