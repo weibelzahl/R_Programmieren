@@ -7,127 +7,121 @@
   Version: 0.1.1
 
 - Class: text
-  Output: One of the greatest strengths of R, relative to other programming languages, is the ease with which we can create publication-quality graphics. In this lesson, you'll learn about base graphics in R. 
-
-- Class: text
-  Output: We do not cover the more advanced portions of graphics in R in this lesson. These include lattice, ggplot2 and ggvis.
-
-- Class: text
-  Output: There is a school of thought that this approach is backwards, that we should teach ggplot2 first. See http://varianceexplained.org/r/teach_ggplot2_to_beginners/ for an outline of this view.
+  Output: Eine der größten Stärken von R im Vergleich zu anderen Programmiersprachen ist die Einfachheit, mit der Grafiken nach Publikationsstandards erstellt werden können. In dieser Übung werden Sie einige grundlegende Funktionen für das Erstellen von Grafiken in R kennen lernen.
 
 - Class: cmd_question
-  Output: Load the included data frame cars with data(cars).
+  Output: Laden Sie zuerst den Datensatz cars, indem Sie den Befehl data(cars) eingeben.
   CorrectAnswer: data(cars)
   AnswerTests: omnitest(correctExpr='data(cars)')
-  Hint: Type data(cars) to load the data.
+  Hint: Tippen Sie data(cars) um die Daten zu laden.
 
 - Class: text
-  Output: To fix ideas, we will work with simple data frames. Our main goal is to introduce various plotting functions and their arguments. All the output would look more interesting with larger, more complex data sets.
+  Output: Um die Vorgehensweisen zu veranschaulichen, werden wir mit einfachen Datensätzen arbeiten. Unser hauptsächliches Ziel ist, verschiedene Funktionen für die Grafikerstellung und deren Argumente einzuführen. Natürlich würde der Output bei größeren, komplexeren Datensätzen interessanter aussehen.
 
 - Class: cmd_question
-  Output: Pull up the help page for cars.
+  Output: Rufen Sie die Dokumentation bzw. Hilfeseite für den Datensatz cars auf.
   CorrectAnswer: ?cars
   AnswerTests: any_of_exprs('?cars', 'help(cars)', 'help("plot")')
-  Hint: Type ?cars or help(cars) to view a help page with details on the car data frame.
+  Hint: Tippen Sie ?cars oder help(cars) um die Hilfeseite mit Informationen über den Datensatz cars zu sehen.
 
 - Class: text
-  Output: "As you can see in the help page, the cars data set has only two variables: speed and stopping distance. Note that the data is from the 1920s."
+  Output: "Wie Sie der Hilfeseite entnehmen können, hat der Datensatz nur zwei Variablen: speed (Geschwindigkeit) und dist (Bremsweg). Beachten Sie, dass die Daten aus den 1920er Jahren stammen."
 
 - Class: cmd_question
-  Output: Run head() on the cars data.
+  Output: Werfen Sie zuerst mit der Funktion head() einen Blick auf die Daten.
   CorrectAnswer: head(cars)
   AnswerTests: omnitest(correctExpr='head(cars)')
-  Hint: Type head(cars) to see the top of the cars data frame.
+  Hint: Tippen Sie head(cars) in die Konsole, um die ersten Zeilen des Datensatzes cars zu sehen.
 
 - Class: text
-  Output: Before plotting, it is always a good idea to get a sense of the data. Key R commands for doing so include, dim(), names(), head(), tail() and summary().
+  Output: Bevor man eine Grafik erstellt, ist es immer sinnvoll, ein Gefühl für die Daten zu bekommen. Zentrale Befehle in R sind hierfür dim(), names(), head(), tail(), summary() und str().
 
 - Class: cmd_question
-  Output: Run the plot() command on the cars data frame. 
+  Output: Wenden Sie den Befehl plot() auf den Datensatz cars an. 
   CorrectAnswer: plot(cars)
   AnswerTests: omnitest(correctExpr='plot(cars)')
-  Hint: Type plot(cars) to create a plot of the cars data frame.
+  Hint: Tippen Sie plot(cars), um eine Graphik des Datensatzes zu erstellen.
 
 - Class: text
-  Output: As always, R tries very hard to give you something sensible given the information that you have provided to it. First, R notes that the data frame you have given it has just two columns, so it assumes that you want to plot one column versus the other.
+  Output: Wie immer versucht R, Ihnen etwas auszugeben, das die Informationen, die Sie R gegeben haben, berücksichtigt. R bemerkt erstens, dass der Datensatz nur zwei Spalten hat, weswegen es annimmt, dass Sie eine Darstellung wünschen, in der die Information jeder Spalte auf je einer Achse eines zweidimensionalen Koordinatensystems aufgetragen ist. 
+  
+- Class: text
+  Output: Zweitens benutzt R die Namen der Spalten für die Beschriftung der Achsen, da wir keine anderweitigen Informationen gegeben haben. R liefert drittens eine passende Skalierung der Achsen und benutzt viertens die anderen Voreinstellungen der Funktion plot().
 
 - Class: text
-  Output: Second, since we do not provide labels for either axis, R uses the names of the columns. Third, it creates axis tick marks at nice round numbers and labels them accordingly. Fourth, it uses the other defaults supplied in plot().
-
-- Class: text
-  Output: We will now spend some time exploring plot, but many of the topics covered here will apply to most other R graphics functions. Note that 'plot' is short for scatterplot.
+  Output: Wir werden nun einige Zeit damit verbringen, die Funktion plot() zu ergründen, wobei viele der angesprochenen Aspekte auf die meisten anderen Funktionen für die Grafikerstellung übertragbar sind. Beachten Sie, dass 'plot' die Kurzform von 'scatterplot' (Streudiagramm) ist.
 
 - Class: cmd_question
-  Output: Look up the help page for plot(). 
+  Output: Schauen Sie sich die Hilfeseite für plot() an. 
   CorrectAnswer: ?plot
   AnswerTests: any_of_exprs('?plot', 'help(plot)')
-  Hint: Type ?plot or help(plot) to view a help page for plot().
+  Hint: Tippen Sie ?plot oder help(plot) um die Hilfeseite aufzurufen.
 
 - Class: text
-  Output: The help page for plot() highlights the different arguments that the function can take. The two most important are x and y, the variables that will be plotted. For the next set of questions, include the argument names in your answers. That is, do not type plot(cars$speed, cars$dist), although that will work. Instead, use plot(x = cars$speed, y = cars$dist).
+  Output: "Die Hilfeseite für die Funktion plot() zeigt Ihnen die verschiedenen Argumente, die bei dieser Funktion spezifiziert werden können. Die beiden wichtigsten sind x und y, die Variablen, die grafisch dargestellt werden. Verwenden Sie die Namen der Argumente, wenn Sie die nächsten Fragen beantworten. Tippen Sie also nicht type plot(cars$speed, cars$dist) - auch wenn dieser Befehl funktionieren würde -, sondern plot(x = cars$speed, y = cars$dist)."
 
 - Class: cmd_question
-  Output: Use plot() command to show speed on the x-axis and dist on the y-axis from the cars data frame. Use the form of the plot command in which vectors are explicitly passed in as arguments for x and y.
+  Output: Verwenden Sie den Befehl plot() um die Variable Geschwindigkeit (speed) auf der x-Achse und Bremsweg (dist) auf der y-Achse darzustellen. Geben Sie die Variablen explizit als Argumente für x und y an.
   CorrectAnswer: plot(x = cars$speed, y = cars$dist)
   AnswerTests: omnitest(correctExpr='plot(x = cars$speed, y = cars$dist)')
-  Hint: Type plot(x = cars$speed, y = cars$dist) to create the plot.
+  Hint: Tippen Sie plot(x = cars$speed, y = cars$dist) um das Streudiagramm zu erstellen.
 
 - Class: text
-  Output: Note that this produces a slightly different answer than plot(cars). In this case, R is not sure what you want to use as the labels on the axes, so it just uses the arguments which you pass in, data frame name and dollar signs included.
+  Output: 'Beachten Sie, dass dieser Befehl zu einer etwas anderen Grafik führt als plot(cars). In diesem Fall ist R nicht sicher, was Sie als Achsenbeschriftung nutzen möchten, sodass es einfach die Argumente nutzt, die Sie eingegeben haben - einschließlich des Datensatznamens und der Dollarzeichen.'
 
 - Class: text
-  Output: Note that there are other ways to call the plot command, i.e., using the "formula" interface. For example, we get a similar plot to the above with plot(dist ~ speed, cars). However, we will wait till later in the lesson before using the formula interface.
+  Output: 'Beachten Sie, dass es andere Wege gibt, den Befehl plot() zu spezifizieren, beispielsweise über die Eingabe als "Formel". Wir bekommen z.B. die gleiche Grafik mit plot(dist ~ speed, cars). Wir werden allerdings erst später in der Übung auf die Eingabe als Formel eingehen.'
   
 - Class: cmd_question
-  Output: Use plot() command to show dist on the x-axis and speed on the y-axis from the cars data frame. This is the opposite of what we did above.
+  Output: Verwenden Sie den Befehl plot() um die Variable Bremsweg (dist) auf der x-Achse und Geschwindigkeit (speed) auf der y-Achse darzustellen. Die Variablen sollen also im Vergleich zur vorherigen Grafik auf der jeweils anderen Achse erscheinen.
   CorrectAnswer: plot(x = cars$dist, y = cars$speed)
   AnswerTests: omnitest(correctExpr='plot(x = cars$dist, y = cars$speed)')
-  Hint: Type plot(x = cars$dist, y = cars$speed) to create the plot.
+  Hint: Tippen Sie plot(x = cars$dist, y = cars$speed) um die Grafik zu erstellen.
 
 - Class: text
-  Output: It probably makes more sense for speed to go on the x-axis since stopping distance is a function of speed more than the other way around. So, for the rest of the questions in this portion of the lesson, always assign the arguments accordingly.
+  Output: Es ist wahrscheinlich sinnvoller, die Geschwindigkeit auf der x-Achse darzustellen, da eher der Bremsweg eine Funktion der Geschwindigkeit ist als andersherum. Nutzen Sie also diese Zuordnung zu den Achsen für die weiteren Fragen dieser Übung.
 
 - Class: text
-  Output: In fact, you can assume that the answers to the next few questions are all of the form plot(x = cars$speed, y = cars$dist, ...) but with various arguments used in place of the ...
+  Output: Sie können in der Tat annehmen, dass die Antworten auf die nächsten paar Fragen alle der Form plot(x = cars$speed, y = cars$dist, ...) folgen, jedoch verschiedene Argumente statt des ... genutzt werden sollen.
 
 - Class: cmd_question
-  Output: Recreate the plot with the label of the x-axis set to "Speed". 
+  Output: Erstellen Sie die Grafik noch einmal und geben Sie an, dass die x-Achse mit "Speed" beschriftet sein soll. Hierfür benötigen Sie das Argument xlab = ... 
   CorrectAnswer: plot(x = cars$speed, y = cars$dist, xlab = "Speed")
   AnswerTests: omnitest(correctExpr='plot(x = cars$speed, y = cars$dist, xlab = "Speed")')
-  Hint: Type plot(x = cars$speed, y = cars$dist, xlab = "Speed") to create the plot.
+  Hint: Tippen Sie plot(x = cars$speed, y = cars$dist, xlab = "Speed") um die Grafik zu erstellen.
 
 - Class: cmd_question
-  Output: Recreate the plot with the label of the y-axis set to "Stopping Distance". 
+  Output: Erstellen Sie die Grafik erneut und geben Sie an, dass die y-Achse mit "Stopping Distance" beschriftet sein soll.
   CorrectAnswer: plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance")
   AnswerTests: omnitest(correctExpr='plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance")')
-  Hint: Type plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance") to create the plot.
+  Hint: Tippen Sie plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance") um die Grafik zu erstellen.
 
 - Class: cmd_question
-  Output: Recreate the plot with "Speed" and "Stopping Distance" as axis labels. 
+  Output: Erstellen Sie die Grafik noch einmal mit "Speed" und "Stopping Distance" als Achsenbeschriftungen. 
   CorrectAnswer: plot(x = cars$speed, y = cars$dist, xlab = "Speed", ylab = "Stopping Distance")
   AnswerTests: omnitest(correctExpr='plot(x = cars$speed, y = cars$dist, xlab = "Speed", ylab = "Stopping Distance")')
-  Hint: Type plot(x = cars$speed, y = cars$dist, xlab = "Speed", ylab = "Stopping Distance") to create the plot.
+  Hint: Tippen Sie plot(x = cars$speed, y = cars$dist, xlab = "Speed", ylab = "Stopping Distance") um die Grafik zu erstellen.
 
 - Class: text
-  Output: The reason that plots(cars) worked at the beginning of the lesson was that R was smart enough to know that the first element (i.e., the first column) in cars should be assigned to the x argument and the second element to the y argument. To save on typing, the next set of answers will all be of the form, plot(cars, ...) with various arguments added.
+  Output: Der Grund dafür, dass der Befehl plot(cars) am Beginn der Übung funktioniert hat, war, dass R schlau genug war zu wissen, dass das erste Element (d.h. die erste Spalte) des Datensatzes dem x-Argument zugewiesen und das zweite Element dem y-Argument zugewiesen werden sollte. Um weniger Arbeit mit dem Tippen zu haben, sollen die nächsten Antworten alle in der Form plot(cars, ...) mit verschiedenen zusätzlichen Argumenten sein.
 
 - Class: text
-  Output: For each question, we will only want one additional argument at a time. Of course, you can pass in more than one argument when doing a real project.
+  Output: Wir möchten für jede der folgenden Fragen nur ein zusätzliches Argument auf einmal hinzufügen. Natürlich können Sie mehr als ein Argument einfügen, wenn Sie eine echte Datenauswertung machen.
 
 - Class: cmd_question
-  Output: Plot cars with a main title of "My Plot". Note that the argument for the main title is "main" not "title".
+  Output: Erstellen Sie ein Streudiagramm für den Datensatz cars mit der Überschrift "My Plot". Hierfür benötigen Sie das Argument "main".
   CorrectAnswer: plot(cars, main = "My Plot")
   AnswerTests: omnitest(correctExpr='plot(cars, main = "My Plot")')
-  Hint: Type plot(cars, main = "My Plot") to create the plot.
+  Hint: Tippen Sie plot(cars, main = "My Plot") um die Grafik zu erstellen.
 
 - Class: cmd_question
-  Output: Plot cars with a sub title of "My Plot Subtitle".
+  Output: Erstellen Sie ein Streudiagramm für den Datensatz cars mit der Unterüberschrift "My Plot Subtitle". Das benötigte Argument können Sie der Hilfeseite (?plot) entnehmen.
   CorrectAnswer: plot(cars, sub = "My Plot Subtitle")
   AnswerTests: omnitest(correctExpr='plot(cars, sub = "My Plot Subtitle")')
-  Hint: Type plot(cars, sub = "My Plot Subtitle") to create the plot.
+  Hint: Tippen Sie plot(cars, sub = "My Plot Subtitle") um die Grafik zu erstellen.
 
 - Class: text
-  Output: The plot help page (?plot) only covers a small number of the many arguments that can be passed in to plot() and to other graphical functions. To begin to explore the many other options, look at ?par. Let's look at some of the more commonly used ones. Continue using plot(cars, ...) as the base answer to these questions.
+  Output: Die Hilfeseite des Befehls plot() deckt nur eine kleine Anzahl der vielen Argumente ab, die bei plot() und anderen Funktionen für die Grafikerstellung spezifiziert werden können. Um ein paar der vielen anderen Optionen kennen zu lernen, schauen Sie auf ?par nach. Wir werden uns im Folgenden ein paar der häufiger genutzten Argumente ansehen. Ihre Antworten sollen der grundlegenden Form plot(cars, ...) folgen.
 
 - Class: cmd_question
   Output: Plot cars with a red color. (Use col = 2 to achieve this effect.)
