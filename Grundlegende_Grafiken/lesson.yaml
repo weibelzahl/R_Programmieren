@@ -115,7 +115,7 @@
   Hint: Tippen Sie plot(cars, main = "My Plot") um die Grafik zu erstellen.
 
 - Class: cmd_question
-  Output: Erstellen Sie ein Streudiagramm für den Datensatz cars mit der Unterüberschrift "My Plot Subtitle". Das benötigte Argument können Sie der Hilfeseite (?plot) entnehmen.
+  Output: Erstellen Sie ein Streudiagramm für den Datensatz cars mit dem Untertitel "My Plot Subtitle". Das benötigte Argument können Sie der Hilfeseite (?plot) entnehmen.
   CorrectAnswer: plot(cars, sub = "My Plot Subtitle")
   AnswerTests: omnitest(correctExpr='plot(cars, sub = "My Plot Subtitle")')
   Hint: Tippen Sie plot(cars, sub = "My Plot Subtitle") um die Grafik zu erstellen.
@@ -124,80 +124,81 @@
   Output: Die Hilfeseite des Befehls plot() deckt nur eine kleine Anzahl der vielen Argumente ab, die bei plot() und anderen Funktionen für die Grafikerstellung spezifiziert werden können. Um ein paar der vielen anderen Optionen kennen zu lernen, schauen Sie auf ?par nach. Wir werden uns im Folgenden ein paar der häufiger genutzten Argumente ansehen. Ihre Antworten sollen der grundlegenden Form plot(cars, ...) folgen.
 
 - Class: cmd_question
-  Output: Plot cars with a red color. (Use col = 2 to achieve this effect.)
+  Output: Erstellen Sie das Streudiagramm mit rot gefärbten Datenpunkten. (Nutzen Sie den Befehl col = 2 um diesen Effekt zu erzielen.)
   CorrectAnswer: plot(cars, col = 2)
   AnswerTests: omnitest(correctExpr='plot(cars, col = 2)')
-  Hint: Type plot(cars, col = 2) to create the plot.
+  Hint: Tippen Sie plot(cars, col = 2) um die Grafik zu erstellen.
 
 - Class: cmd_question
-  Output: Plot cars while limiting the x-axis to 10 through 15.  (Use xlim = c(10, 15) to achieve this effect.) 
+  Output: 'Erstellen Sie das Streudiagramm und begrenzen Sie die x-Achse auf das Intervall [10,15]. (Der relevante Befehl lautet: xlim = c(10, 15))' 
   CorrectAnswer: plot(cars, xlim = c(10, 15))
   AnswerTests: omnitest(correctExpr='plot(cars, xlim = c(10, 15))')
-  Hint: Type plot(cars, xlim = c(10, 15)) to create the plot.
+  Hint: Tippen Sie plot(cars, xlim = c(10, 15)) um die Grafik zu erstellen.
 
 - Class: text
-  Output: You can also change the shape of the symbols in the plot. The help page for points (?points) provides the details.
+  Output: Sie können auch die Form der Symbole in der Grafik verändern. Die Hilfeseite für Punkte (?points) liefert Ihnen die Details.
 
 - Class: cmd_question
-  Output: Plot cars using triangles.  (Use pch = 2 to achieve this effect.) 
+  Output: Erstellen Sie das Streudiagramm mit Dreiecken statt Punkten.  (Nutzen Sie den Befehl pch = 2 um diesen Effekt zu erzielen.) 
   CorrectAnswer: plot(cars, pch = 2)
   AnswerTests: omnitest(correctExpr='plot(cars, pch = 2)')
-  Hint: Type plot(cars, pch = 2) to create the plot.
+  Hint: Tippen Sie plot(cars, pch = 2) um die Grafik zu erstellen.
 
 - Class: text
-  Output: Arguments like "col" and "pch" may not seem very intuitive. And that is because they aren't! So, many/most people use more modern packages, like ggplot2, for creating their graphics in R.
+  Output: Argumente wie "col" und "pch" sind nicht sehr intuitiv. Deswegen nutzen viele Personen moderne Packete wie ggplot2, um ihre Grafiken in R zu erstellen.
 
 - Class: text
-  Output: It is, however, useful to have an introduction to base graphics because many of the idioms in lattice and ggplot2 are modeled on them.
+  Output: Es ist trotzdem nützlich, sich mit den vorgestellten Befehlen für Grafiken zu beschäftigen, da viele der Befehle in lattice und ggplot2 auf diesen grundlegenden Funktionen für die Grafikerstellung beruhen.
 
 - Class: text
-  Output: Let's now look at some other functions in base graphics that may be useful, starting with boxplots.
+  Output: Schauen wir uns nun einige weitere nützliche Funktionen an! Wir beginnen mit der Erstellung von Boxplots.
 
 - Class: cmd_question
-  Output: Load the mtcars data frame. 
+  Output: Laden Sie den Datensatz mtcars. 
   CorrectAnswer: data(mtcars)
   AnswerTests: omnitest(correctExpr='data(mtcars)')
-  Hint: Type data(mtcars) to load the data.
+  Hint: Tippen Sie data(mtcars) um den Datensatz zu laden.
 
 - Class: text
-  Output: Anytime that you load up a new data frame, you should explore it before using it. In the middle of a swirl lesson, just type play(). This temporarily suspends the lesson (without losing the work you have already done) and allows you to issue commands like dim(mtcares) and head(mtcars). Once you are done examining the data, just type nxt() and the lesson will pick up where it left off.
+  Output: Jedes Mal, wenn Sie einen neuen Datensatz laden, sollten Sie sich vor dem Rechnen mit diesem vertraut machen. Wenn Sie sich mitten in einer Swirl-Übung befinden, können Sie die Übung mit play() unterbrechen und - nachdem Sie sich ausreichend mit dem Datensatz vertraut gemacht haben - mit dem Befehl nxt() an diese Stelle der Übung zurückkehren. 
 
 - Class: cmd_question
-  Output: Look up the help page for boxplot(). 
+  Output: Schauen Sie sich die Hilfeseite für den Befehl boxplot() an. 
   CorrectAnswer: ?boxplot
   AnswerTests: any_of_exprs('?boxplot', 'help(boxplot)')
-  Hint: Type ?boxplot or help(boxplot) to view a help page with details about boxplot.
+  Hint: Tippen Sie ?boxplot oder help(boxplot) um die Hilfeseite aufzurufen.
 
 - Class: text
-  Output: Instead of adding data columns directly as input arguments, as we did with plot(), it is often handy to pass in the entire data frame. This is what the "data" argument in boxplot() allows.
+  Output: Anstatt Spalten aus Datensätzen direkt als Argumente einzugeben, wie wir es mit plot() gemacht haben, ist es oft praktisch, den ganzen Datensatz einzugeben. Dies erlaubt uns das Argument "data" der Funktion boxplot().
 
 - Class: text
-  Output: boxplot(), like many R functions, also takes a "formula" argument, generally an expression with a tilde ("~") which indicates the relationship between the input variables. This allows you to enter something like mpg ~ cyl to plot the relationship between cyl (number of cylinders) on the x-axis and mpg (miles per gallon) on the y-axis.
+  Output: 'Die Funktion boxplot() akzeptiert wie viele Funktionen in R auch die Eingabe als Formel - also Ausdrücke mit einer Tilde ("~"), die eine Beziehung zwischen den eingegebenen Variablen kennzeichnet. Das erlaubt Ihnen etwas wie mpg ~ cyl einzugeben, um die Beziehung zwischen cyl (Anzahl der Zylinder) auf der x-Achse und mpg (Meilen pro Gallone) auf der y-Achse grafisch darzustellen.'
 
 - Class: cmd_question
-  Output: Use boxplot() with formula = mpg ~ cyl and data = mtcars to create a box plot.
+  Output: Nutzen Sie die Funktion boxplot() mit den Argumenten formula = mpg ~ cyl und data = mtcars, um einen Boxplot zu erstellen.
   CorrectAnswer: boxplot(formula = mpg ~ cyl, data = mtcars)
   AnswerTests: omnitest(correctExpr='boxplot(formula = mpg ~ cyl, data = mtcars)')
-  Hint: Type boxplot(formula = mpg ~ cyl, data = mtcars) to create the plot.
+  Hint: Tippen Sie boxplot(formula = mpg ~ cyl, data = mtcars) um die Grafik zu erstellen.
 
 - Class: text
-  Output: The plot shows that mpg is much lower for cars with more cylinders. Note that we can use the same set of arguments that we explored with plot() above to add axis labels, titles and so on.
+  Output: Die Grafik zeigt, dass die mpg-Werte für Autos mit mehr Zylindern sehr viel geringer sind. Beachten Sie, dass wir dieselben Argumente wie bei der Funktion plot() nutzen können, um Achsenbeschriftungen, Titel usw. zu spezifizieren.
 
 - Class: text
-  Output: When looking at a single variable, histograms are a useful tool. hist() is the associated R function. Like plot(), hist() is best used by just passing in a single vector. 
+  Output: Wenn wir uns nur eine Variable anschauen, sind Histogramme eine nützliche Form der Darstellung. hist() ist die entsprechende Funktion in R. Wie bei plot() nutzt man die Funktion hist() am besten, indem man nur einen Vektor bzw. eine Variable eingibt.
 
 - Class: cmd_question
-  Output: Use hist() with the vector mtcars$mpg to create a histogram.
+  Output: Nutzen Sie die Funktion hist() mit dem Vektor mtcars$mpg um ein Histogramm zu erstellen.
   CorrectAnswer: hist(mtcars$mpg)
   AnswerTests: any_of_exprs('hist(mtcars$mpg)', 'hist(x = mtcars$mpg)')
-  Hint: Type hist(mtcars$mpg) to create the plot.
+  Hint: Tippen Sie hist(mtcars$mpg) um die Grafik zu erstellen.
 
 # Not sure what a good lesson length is for this. 
 # Might add some information on saving plots.
 # Other functions that I use include identify().
 
 - Class: text
-  Output: In this lesson, you learned how to work with base graphics in R. The best place to go from here is to study the ggplot2 package. If you want to explore other elements of base graphics, then this web page (http://www.ling.upenn.edu/~joseff/rstudy/week4.html) provides a useful overview.
+  Output: 'In dieser Übung haben Sie gelernt, mit grundlegenden Funktionen für Grafiken zu arbeiten. Weitere Befehle für grundlegende Grafiken sind - allerdings nur auf Englisch! - auf folgender Webseite dargestellt: http://www.ling.upenn.edu/~joseff/rstudy/week4.html 
+  Um tiefer in das Feld der Grafikerstellung einzusteigen, ist das Packet ggplot2 zu empfehlen.'
 
 - Class: text
   Output: Herzlichen Glückwunsch, Sie haben soeben die Anforderungen für die Einsendeaufgaben zum Fernlehrbrief  `Statistik 1 - Deskriptive Statistik - Das lineare Modell` (Aufgabe 1) erfüllt. Nennen Sie in Ihrer Einsendung unter Aufgabe 1 einfach das Codewort `ÜbeRfliegeR`.
