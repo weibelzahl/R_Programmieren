@@ -94,32 +94,31 @@
   Output: summary() liefert für jede Variable einen anderen Output, der von der Kategorie der Variablen abhängig ist. Für numerische Daten wie Precip_Min zeigt summary() das Minimum, untere Quartil, den Median, das arithmetische Mittel, obere Quartil und das Maximum an. Diese Werte helfen uns zu verstehen, wie die Daten verteilt sind.
 
 - Class: text
-  Output: Für kategoriale Variablen (in R 'factor variables') zeigt summary() die absolute Häufigkeit jeder Ausprägung (in R 'level'). Zum Beispiel kommt jede Ausprägung der Variable "Sientific_Name" nur einmal vor, da der wissenschaftliche Name jeder Pflanze einmalig ist. Im Gegensatz dazu sagt uns die Zusammenfassung für die Variable "Duration", dass der Datensatz 3031 "Perennial plants" (mehrjährige Pflanzen), 682 "Annual plant" (einjährige Pflanzen) usw. enthält.
+  Output: Für kategoriale Variablen (in R 'factor variables') zeigt summary() die absolute Häufigkeit jeder Ausprägung (in R 'level'). Zum Beispiel kommt jede Ausprägung der Variable "Sientific_Name" nur einmal vor, da der wissenschaftliche Name jeder Pflanze einmalig ist. Im Gegensatz dazu sagt uns die Zusammenfassung für die Variable "Duration" (Dauer), dass der Datensatz 3031 "Perennial plants" (mehrjährige Pflanzen), 682 "Annual plant" (einjährige Pflanzen) usw. enthält.
 
 - Class: cmd_question
-  Output: 
-  You can see that R truncated the summary for Active_Growth_Period by including a catch-all category called 'Other'. Since it is a categorical/factor variable, we can see how many times each value actually occurs in the data with table(plants$Active_Growth_Period).
+  Output: Sie können sehen, dass R die Zusammenfassung für Active_Growth_Period (aktive Wachstumsperiode) verkürzt hat, indem es eine Restkategorie namens "Other" (Sonstige) eingefügt hat. Da wir hier eine kategoriale Variable haben, können wir mit dem Befehl table(plants$Active_Growth_Period) sehen, wie oft jede Ausprägung tatsächlich in den Daten vorkommt. Erstellen Sie die diese Häufigkeitstabelle.
   CorrectAnswer: table(plants$Active_Growth_Period)
   AnswerTests: omnitest(correctExpr='table(plants$Active_Growth_Period)')
-  Hint: table(plants$Active_Growth_Period) will display counts for each level of the factor variable.
+  Hint: table(plants$Active_Growth_Period) zeigt die absoluten Häufigkeiten für jede Ausprägung der kategorialen Variable ('factor variable' in R).
 
 - Class: text
-  Output: Each of the functions we've introduced so far has its place in helping you to better understand the structure of your data. However, we've left the best for last....
+  Output: Jede der vorgestellten Funktionen hat ihren Platz, wenn Sie die Struktur der Daten besser verstehen wollen. Trotzdem haben wir uns die beste Funktion bis zum Schluss aufgespart...
 
 - Class: cmd_question
-  Output: Perhaps the most useful and concise function for understanding the *str*ucture of your data is str(). Give it a try now.
+  Output: Die vielleicht nützlichste Funktion, um die Struktur Ihrer Daten zu verstehen, ist str(). Probieren Sie es aus!
   CorrectAnswer: str(plants)
   AnswerTests: omnitest(correctExpr='str(plants)')
-  Hint: Use str(plants) to look at the structure of your data.
+  Hint: Nutzen Sie str(plants), um sich die Struktur Ihrer Daten anzusehen.
 
 - Class: text
-  Output: The beauty of str() is that it combines many of the features of the other functions you've already seen, all in a concise and readable format. At the very top, it tells us that the class of plants is 'data.frame' and that it has 5166 observations and 10 variables. It then gives us the name and class of each variable, as well as a preview of its contents.
+  Output: Die Schönheit von str() ist, dass es die vielen Eigenschaften der zuvor dargestellten Funktionen vereint und die relevanten Informationen in knapper und lesbarer Form präsentiert. Am Anfang erfahren wir, dass 'plants' der Kategorie 'data frame' angehört und dass 'plants' aus 5166 Beobachtungen und 10 Variablen besteht. Dann gibt str() uns die Namen und Kategorien sowie die ersten Werte jeder Variablen.
 
 - Class: text
-  Output: str() is actually a very general function that you can use on most objects in R. Any time you want to understand the structure of something (a dataset, function, etc.), str() is a good place to start.
+  Output: str() ist tatsächlich eine sehr allgemeine Funktion, die auf die meisten Objekte in R angewendet werden kann. Immer wenn Sei die Struktur von etwas (einem Datensatz, einer Funktion, etc.) verstehen wollen, ist str() ein guter Beginn.
 
 - Class: text
-  Output: In this lesson, you learned how to get a feel for the structure and contents of a new dataset using a collection of simple and useful functions. Taking the time to do this upfront can save you time and frustration later on in your analysis.
+  Output: In dieser Übung haben Sie gelernt, wie Sie ein Gefühl für die Struktur und den Inhalt eines neuen Datensatzes gewinnen, indem Sie eine Sammlung einfacher und nützlicher Funktionen verwenden. Wenn Sie sich zu Beginn die Zeit für diese Sichtung Ihrer Daten nehmen, kann Ihnen das später bei der Datenanalyse viel Zeit und Frustration sparen!
 
 - Class: text
   Output: Herzlichen Glückwunsch, Sie haben soeben die Anforderungen für die Einsendeaufgaben zum Fernlehrbrief  `Statistik 1 - Deskriptive Statistik - Bivariate Deskriptive Statistik` (Aufgabe 1) erfüllt. Nennen Sie in Ihrer Einsendung unter Aufgabe 1 einfach das Codewort `MeisteR`.
