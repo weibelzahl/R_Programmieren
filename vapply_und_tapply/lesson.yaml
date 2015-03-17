@@ -7,58 +7,59 @@
   Version: 2.2.11
 
 - Class: text
-  Output: "In the last lesson, you learned about the two most fundamental members of R's *apply family of functions: lapply() and sapply(). Both take a list as input, apply a function to each element of the list, then combine and return the result. lapply() always returns a list, whereas sapply() attempts to simplify the result."
+  Output: "In der letzten Übung haben Sie die beiden grundlegendsten '*apply-Funktionen' kennen gelernt: lapply() und sapply(). Beide nehmen eine Liste als Argument an, wenden eine Funktion auf jedes Element der Liste an und geben dann gebündelt das Ergebnis aus. lapply() gibt immer eine Liste aus, sapply() hingegen versucht das Ergebnis zu vereinfachen."
 
 - Class: text
-  Output: In this lesson, you'll learn how to use vapply() and tapply(), each of which serves a very specific purpose within the Split-Apply-Combine methodology. For consistency, we'll use the same dataset we used in the 'lapply and sapply' lesson.
+  Output: In dieser Übung werden Sie lernen, wie Sie die Funktionen vapply() und tapply() nutzen, die beide einem sehr spezifischen Zweck in der "Split-Apply-Combine methodology" dienen. Wir werden wieder den Datensatz "Flags" benutzen.
 
 - Class: text
-  Output: "The Flags dataset from the UCI Machine Learning Repository contains details of various nations and their flags. More information may be found here: http://archive.ics.uci.edu/ml/datasets/Flags"
+  Output: 'Der Datensatz "Flags" der "UCI Machine Learning Repository" enthält Details verschiedener Nationen und Ihrer Flaggen. Mehr Informationen (in englischer Sprache) finden Sie auf folgender Website: http://archive.ics.uci.edu/ml/datasets/Flags'
 
 - Class: text
-  Output: I've stored the data in a variable called flags. If it's been a while since you completed the 'lapply and sapply' lesson, you may want to reacquaint yourself with the data by using functions like dim(), head(), str(), and summary() when you return to the prompt (>). You can also type viewinfo() at the prompt to bring up some documentation for the dataset. Let's get started!
+  Output: Die Daten sind in einer Variable namens "flags" gespeichert. Wenn es einige Zeit her ist, dass Sie die 'lapply und sapply' Übung abgeschlossen haben, sollten Sie sich erneut mit Hilfe von Funktionen wie dim(), head(), str() und summary() mit den Daten vertraut machen, sobald die Eingabeaufforderung erscheint (>). Sie können auch viewinfo() eintippen, um eine Dokumentation über den Datensatz aufzurufen. Fangen wir an!
 
 - Class: cmd_question
-  Output: As you saw in the last lesson, the unique() function returns a vector of the unique values contained in the object passed to it. Therefore, sapply(flags, unique) returns a list containing one vector of unique values for each column of the flags dataset. Try it again now.
+  Output: Wie Sie in der letzten Übung gesehen haben, gibt die Funktion unique() einen Vektor aller in einem Objekt vorkommenden voneinander verschiedenen Werte bzw. Ausprägungen aus. Deswegen ist das Ergebnis von sapply(flags, unique) eine Liste, die für jede Spalte des Datensatzes einen Vektor enthält, in dem die in der jeweiligen Spalte vorkommenden voneinander verschiedenen Werte aufgeführt sind. Schauen Sie sich das Ergebnis dieses Befehls jetzt noch einmal an.
   CorrectAnswer: sapply(flags, unique)
   AnswerTests: omnitest(correctExpr='sapply(flags, unique)')
-  Hint: Use sapply(flags, unique) to return a list containing one vector of unique values for each column of the flags dataset.
+  Hint: Tippen Sie sapply(flags, unique) in die Konsole.
 
 - Class: text
-  Output: What if you had forgotten how unique() works and mistakenly thought it returns the *number* of unique values contained in the object passed to it? Then you might have incorrectly expected sapply(flags, unique) to return a numeric vector, since each element of the list returned would contain a single number and sapply() could then simplify the result to a vector.
+  Output: Nehmen wir an, Sie haben vergessen, was die Funktion unique() bewirkt und fälschlicherweise gedacht, sie würde Ihnen die Anzahl der einmaligen Werte, die in einem Objekt enthalten sind, ausgeben. Dann würden Sie erwartet haben, dass das Ergebnis von sapply(flags, unique) ein numerischer Vektor ist, da jedes Element der Liste eine einzelne Zahl wäre und sapply() diese Liste dann zu einem Vektor vereinfachen könnte.
 
 - Class: text
-  Output: When working interactively (at the prompt), this is not much of a problem, since you see the result immediately and will quickly recognize your mistake. However, when working non-interactively (e.g. writing your own functions), a misunderstanding may go undetected and cause incorrect results later on. Therefore, you may wish to be more careful and that's where vapply() is useful.
+  Output: Wenn Sie interaktiv arbeiten, ist das kein großes Problem, da Sie das Ergebnis sofort sehen und schnell Ihren Fehler erkennen werden. Wenn Sie jedoch nicht interaktiv arbeiten (z.B. wenn Sie eine eigene Funktion schreiben), kann ein Missverständnis unentdeckt bleiben und zu fehlerhaften späteren Ergebnisse führen. Deswegen könnten Sie den Wunsch haben, vorsichtiger zu sein, und dies ist die Stelle, an der vapply() nützlich ist. 
 
 - Class: text
-  Output: Whereas sapply() tries to 'guess' the correct format of the result, vapply() allows you to specify it explicitly. If the result doesn't match the format you specify, vapply() will throw an error, causing the operation to stop. This can prevent significant problems in your code that might be caused by getting unexpected return values from sapply().
+  Output: sapply() versucht das richtige Format zu 'erraten', vapply() hingegen erlaubt es Ihnen, das Format explizit zu spezifizieren. Wenn das Ergebnis nicht mit dem von Ihnen angegebenen Format übereinstimmt, wir vapply() eine Fehlermeldung ausgeben, die die Operation stoppt. Das kann bedeutsame Probleme in Ihrem Kode verhindern, die daran liegen, dass Sie unerwartete Werte als Ergebnis von sapply() erhalten.
 
 - Class: cmd_question
-  Output: Try vapply(flags, unique, numeric(1)), which says that you expect each element of the result to be a numeric vector of length 1. Since this is NOT actually the case, YOU WILL GET AN ERROR. Once you get the error, type ok() to continue to the next question.
+  Output: Probieren Sie den Befehl vapply(flags, unique, numeric(1)) aus, der besagt, dass Sie erwarten, dass jedes Element des Ergebnisses ein numerischer Vektor der Länge 1 ist. Da dies nicht der Fall ist, werden Sie eine FEHLERMELDUNG erhalten! Tippen Sie ok(), nachdem Sie die Fehlermeldung erhalten haben, um mit der nächsten Frage fortzufahren. 
   CorrectAnswer: ok()
   AnswerTests: omnitest(correctExpr="ok()")
-  Hint: Type vapply(flags, unique, numeric(1)), then type ok() to continue to the next question.
+  Hint: Tippen Sie vapply(flags, unique, numeric(1)) und danach ok() um mit der nächsten Frage fortzufahren.
 
 - Class: cmd_question
-  Output: Recall from the previous lesson that sapply(flags, class) will return a character vector containing the class of each column in the dataset. Try that again now to see the result.
+  Output: In der letzten Übung haben wir gesehen, dass sapply(flags, class) uns einen 'character vector' ausgibt, der für jede Spalte (Variable) des Datensatzes die entsprechende Kategorie angibt. Schauen Sie sich das Ergebnis erneut an.
   CorrectAnswer: sapply(flags, class)
   AnswerTests: omnitest(correctExpr="sapply(flags, class)")
-  Hint: Type sapply(flags, class) to get a character vector of column classes.
+  Hint: Tippen Sie sapply(flags, class) um einen 'character vector' der Kategorien, in die die jeweiligen Spalten fallen, zu erhalten.
 
 - Class: cmd_question
-  Output: If we wish to be explicit about the format of the result we expect, we can use vapply(flags, class, character(1)). The 'character(1)' argument tells R that we expect the class function to return a character vector of length 1 when applied to EACH column of the flags dataset. Try it now.
+  Output: Wenn wir explizit das erwartete Format des Ergebnisses angeben möchten, können wir den Befehl vapply(flags, class, character(1)) nutzen. Das Argument 'character(1)' sagt R, dass wir erwarten, dass die Funktion class uns für jede Spalte, auf die sie angewendet wird, einen 'character vector' der Länge 1 ausgibt. Probieren Sie den Befehl jetzt aus.
   CorrectAnswer: vapply(flags, class, character(1))
   AnswerTests: omnitest(correctExpr="vapply(flags, class, character(1))")
-  Hint: Use vapply(flags, class, character(1)) to return a character vector of column classes.
+  Hint: Nutzen Sie den Befehl vapply(flags, class, character(1)) um einen 'character vector' der Kategorien der Spalten (Variablen) zu erhalten.
 
 - Class: text
-  Output: Note that since our expectation was correct (i.e. character(1)), the vapply() result is identical to the sapply() result -- a character vector of column classes.
+  Output: Beachten Sie, dass - da unsere Erwartung richtig war - die Ergebnisse von vapply() und sapply() identisch sind. Wir erhalten jeweils einen 'character vector' der Kategorien der Spalten.
 
 - Class: text
-  Output: You might think of vapply() as being 'safer' than sapply(), since it requires you to specify the format of the output in advance, instead of just allowing R to 'guess' what you wanted. In addition, vapply() may perform faster than sapply() for large datasets. However, when doing data analysis interactively (at the prompt), sapply() saves you some typing and will often be good enough.
+  Output: Sie denken, wahrscheinlich, dass vapply() "sicherer" als sapply() ist, da es Sie zwingt, das erwartete Format anzugeben, anstatt R "raten" zu lassen. Zudem ist die Ausführung des Befehls vapply() bei großen Datensätzen oft schneller als die des Befehls sapply(). Wenn Sie interaktiv arbeiten, spart Ihnen sapply() allerdings einiges an Tipparbeit und wird in der Regel gut genug sein.
 
 - Class: text
-  Output: As a data analyst, you'll often wish to split your data up into groups based on the value of some variable, then apply a function to the members of each group. The next function we'll look at, tapply(), does exactly that.
+  Output: 
+  As a data analyst, you'll often wish to split your data up into groups based on the value of some variable, then apply a function to the members of each group. The next function we'll look at, tapply(), does exactly that.
 
 - Class: cmd_question
   Output: Use ?tapply to pull up the documentation.
