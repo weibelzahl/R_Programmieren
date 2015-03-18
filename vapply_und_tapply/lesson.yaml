@@ -58,64 +58,63 @@
   Output: Sie denken, wahrscheinlich, dass vapply() "sicherer" als sapply() ist, da es Sie zwingt, das erwartete Format anzugeben, anstatt R "raten" zu lassen. Zudem ist die Ausführung des Befehls vapply() bei großen Datensätzen oft schneller als die des Befehls sapply(). Wenn Sie interaktiv arbeiten, spart Ihnen sapply() allerdings einiges an Tipparbeit und wird in der Regel gut genug sein.
 
 - Class: text
-  Output: 
-  As a data analyst, you'll often wish to split your data up into groups based on the value of some variable, then apply a function to the members of each group. The next function we'll look at, tapply(), does exactly that.
+  Output: Als Statistiker werden Sie oft Ihre Daten anhand der Werte einer Variable in Gruppen teilen wollen und dann eine Funktion auf die Mitglieder jeder Gruppe anwenden wollen. Mit der nächsten Funktion, tapply(), kann man genau das machen.
 
 - Class: cmd_question
-  Output: Use ?tapply to pull up the documentation.
+  Output: Rufen Sie mit ?tapply die Dokumentation auf.
   CorrectAnswer: ?tapply
   AnswerTests: any_of_exprs('?tapply', 'help(tapply)')
-  Hint: Pull up the help file with ?tapply.
+  Hint: Rufen Sie die Hilfeseite mit ?tapply auf.
 
 - Class: cmd_question
-  Output: The 'landmass' variable in our dataset takes on integer values between 1 and 6, each of which represents a different part of the world. Use table(flags$landmass) to see how many flags/countries fall into each group.
+  Output: Die Variable 'landmass' in unserem Datensatz nimmt Werte zwischen 1 un 6 an, wobei jeder Wert einen anderen Teil der Welt repräsentiert. Nutzen Sie den Befehl table(flags$landmass) um zu sehen, wie viele Flaggen/Länder in jede Gruppe fallen.
   CorrectAnswer: table(flags$landmass)
   AnswerTests: omnitest(correctExpr="table(flags$landmass)")
-  Hint: Use table(flags$landmass) to see how many flags/countries fall into each group.
+  Hint: Nutzen Sie den Befehl table(flags$landmass) um zu sehen, wie viele Flaggen/Länder in jede Gruppe fallen.
 
 - Class: cmd_question
-  Output: The 'animate' variable in our dataset takes the value 1 if a country's flag contains an animate image (e.g. an eagle, a tree, a human hand) and 0 otherwise. Use table(flags$animate) to see how many flags contain an animate image.
+  Output: Die Variable 'animate' nimmt den Wert 1 an, wenn die Flagge eines Landes ein Abbild von etwas Lebendigem (z.B. ein Vogel, ein Baum, eine menschliche Hand) enthält, und andernfalls den Wert 0. Untersuchen Sie mit dem Befehl table(flags$animate), wie viele Flaggen ein Abbild von etwas Lebendigem enthalten.
   CorrectAnswer: table(flags$animate)
   AnswerTests: omnitest(correctExpr="table(flags$animate)")
-  Hint: Use table(flags$animate) to see how many flags contain an animate image.
+  Hint: Nutzen Sie table(flags$animate) um zu sehen, wie viele Flaggen ein Abbild von etwas Lebendigem enthalten.
 
 - Class: text
-  Output: This tells us that 39 flags contain an animate object (animate = 1) and 155 do not (animate = 0).
+  Output: Wir können nun sehen, dass 39 Flaggen ein Abbild von etwas Lebendigem enthalten (animate = 1) und 155 kein Abbild von etwas Lebendigem enthalten (animate = 0).
 
 - Class: cmd_question
-  Output: If you take the arithmetic mean of a bunch of 0s and 1s, you get the proportion of 1s. Use tapply(flags$animate, flags$landmass, mean) to apply the mean function to the 'animate' variable separately for each of the six landmass groups, thus giving us the proportion of flags containing an animate image WITHIN each landmass group.
+  Output: Wenn Sie das arithmetische Mittel einer Menge von 0en und 1en berechnen, bekommen Sie die relative Häufigkeit an 1en. Nutzen Sie tapply(flags$animate, flags$landmass, mean) um die Funktion 'mean' separat für jede der sechs Gruppen der Variable 'landmass' auf die Variable 'animate' anzuwenden. Damit erhalten Sie die bedingte relative Häufigkeit der Flaggen mit einem Abbild von etwas Lebendigen in Bezug auf den Erdteil, zu dem das Land gehört.
   CorrectAnswer: tapply(flags$animate, flags$landmass, mean)
   AnswerTests: omnitest(correctExpr="tapply(flags$animate, flags$landmass, mean)")
-  Hint: tapply(flags$animate, flags$landmass, mean) will tell us the proportion of flags containing an animate image within each landmass group.
+  Hint: tapply(flags$animate, flags$landmass, mean) gibt uns die relative Häufigkeit der Flaggen mit einem Abbild von etwas Lebendigen innerhalb jedes Erdteils.
 
 - Class: text
-  Output: The first landmass group (landmass = 1) corresponds to North America and contains the highest proportion of flags with an animate image (0.4194).
+  Output: Die erste Gruppe (landmass = 1) besteht aus den Ländern Nordamerikas und hat die höchste relative Häufigkeit an Flaggen mit einem Abbild von etwas Lebendigem (0.4194).
 
 - Class: cmd_question
-  Output: Similarly, we can look at a summary of population values (in round millions) for countries with and without the color red on their flag with tapply(flags$population, flags$red, summary).
+  Output: Auf vergleichbare Art und Weise können wir uns die Zusammenfassung der Einwohnerzahl (in Millionen) von Ländern mit und ohne die Farbe Rot in ihrer Flagge anschauen. Hierfür benötigen wir den Befehl tapply(flags$population, flags$red, summary).
   CorrectAnswer: tapply(flags$population, flags$red, summary)
   AnswerTests: omnitest(correctExpr="tapply(flags$population, flags$red, summary)")
-  Hint: You can see a summary of populations for countries with and without the color red on their flag with tapply(flags$population, flags$red, summary).
+  Hint: Tippen Sie tapply(flags$population, flags$red, summary) in die Konsole.
 
 - Class: mult_question  
-  Output: What is the median population (in millions) for countries *without* the color red on their flag?
+  Output: Was ist die mittlere Einwohnerzahl (in Millionen) der Länder ohne die Farbe Rot in ihrer Flagge?
   AnswerChoices: 9.0; 4.0; 27.6; 3.0; 22.1; 0.0
   CorrectAnswer: 3.0
   AnswerTests: omnitest(correctVal= '3.0')
-  Hint: Use your result from the last question. Recall that red = 0 means that the color red is NOT present on a countries flag.
-
+  Hint: Nutzen Sie das Ergebnis der vorherigen Frage. Erinnern Sie sich daran, dass red = 0 bedeutet, dass die Farbe Rot nicht in der Flagge vorkommt. 
+  
 - Class: cmd_question
-  Output: Lastly, use the same approach to look at a summary of population values for each of the six landmasses.
+  Output: Zuletzt verwenden wir denselben Ansatz, um eine Zusammenfassung der Einwohnerzahlen für jeden der sechs Erdteile zu erhalten. Geben Sie den benötigten Befehl jetzt ein.
   CorrectAnswer: tapply(flags$population, flags$landmass, summary)
   AnswerTests: omnitest(correctExpr="tapply(flags$population, flags$landmass, summary)")
-  Hint: "You can see a summary of populations for each of the six landmasses by calling tapply() with three arguments: flags$population, flags$landmass, and summary."
+  Hint: "Sie erhalten eine Zusammenfassung der Einwohnerzahlen für jeden der sechs Erdteile, wenn Sie tapply() mit folgenden Argumenten anwenden: flags$population, flags$landmass, and summary."
 
 - Class: mult_question  
-  Output: What is the maximum population (in millions) for the fourth landmass group (Africa)?
+  Output: Was ist die maximale Einwohnerzahl (in Millionen) für die vierte Gruppe der Variable 'landmass' (Afrika)?
   AnswerChoices: 56.00; 1010.0; 119.0; 5.00; 157.00
   CorrectAnswer: 56.00
   AnswerTests: omnitest(correctVal= '56.00')
-  Hint: Use your result from the last question.
+  Hint: Nutzen Sie den Output der vorherigen Frage.
 
 - Class: text  
-  Output: In this lesson, you learned how to use vapply() as a safer alternative to sapply(), which is most helpful when writing your own functions. You also learned how to use tapply() to split your data into groups based on the value of some variable, then apply a function to each group. These functions will come in handy on your quest to become a better data analyst.
+  Output: In dieser Übung haben Sie vapply() als sicherere Alternative zu sapply() kennen gelernt, die vor allem dann hilfreich ist, wenn Sie eigene Funktionen schreiben. Sie haben weiterhin gelernt, wie Sie tapply() nutzen können, um Ihren Datensatz anhand der Ausprägungen in einer Variablen zu teilen und dann eine Funktion auf jede Gruppe anzuwenden. Diese Funktionen werden sich auf Ihrem Weg zu einem besseren Statistiker nützlich erweisen.
