@@ -7,79 +7,79 @@
   Version: 2.2.11
 
 - Class: text
-  Output: In this lesson, you'll learn how to use lapply() and sapply(), the two most important members of R's *apply family of functions, also known as loop functions.
+  Output: In dieser Übung werden Sie lernen, mit den Funktionen lapply() und sapply() zu arbeiten, den beiden wichtigsten '*apply-Funktionen' bzw. 'Schleifenfunktionen'.
 
 - Class: text
-  Output: These powerful functions, along with their close relatives (vapply() and tapply(), among others) offer a concise and convenient means of implementing the Split-Apply-Combine strategy for data analysis.
+  Output: Diese Funktionen bieten eine wenig aufwändige und damit zweckmäßige Möglichkeit, die 'Split-Apply-Combine'-Strategie in R anzuwenden.
 
 - Class: text
-  Output: Each of the *apply functions will SPLIT up some data into smaller pieces, APPLY a function to each piece, then COMBINE the results. A more detailed discussion of this strategy is found in Hadley Wickham's Journal of Statistical Software paper titled 'The Split-Apply-Combine Strategy for Data Analysis'.
+  Output: Jede der *apply-Funktionen teilt Datensätze in kleinere Teile ('split'), wendet eine Funktion auf jeden der Teile an ('apply') und bündelt bzw. verknüpft dann die Ergebnisse ('combine'). 
 
 - Class: text
-  Output: "Throughout this lesson, we'll use the Flags dataset from the UCI Machine Learning Repository. This dataset contains details of various nations and their flags. More information may be found here: http://archive.ics.uci.edu/ml/datasets/Flags"
+  Output: "In dieser Übung werden wir den Datensatz 'Flags' der 'UCI Machine Learning Repository' verwenden. Dieser Datensatz enthält Details verschiedener Länder und ihrer Flaggen. Mehr Informationen (in englischer Sprache) können Sie auf der folgenden Website finden: http://archive.ics.uci.edu/ml/datasets/Flags"
 
 - Class: text
-  Output: Let's jump right in so you can get a feel for how these special functions work!
+  Output: Fangen wir direkt an, sodass Sie ein Gefühl dafür bekommen, wie diese speziellen Funktionen arbeiten.
 
 - Class: cmd_question
-  Output: I've stored the dataset in a variable called flags. Type head(flags) to preview the first six lines (i.e. the 'head') of the dataset.
+  Output: Die Daten sind in einer Variable namens 'flags' gespeichert. Tippen Sie head(flags) um die ersten sechs Zeilen des Datensatzes zu sehen.
   CorrectAnswer: head(flags)
   AnswerTests: omnitest(correctExpr='head(flags)')
-  Hint: Type head(flags) to view the 'head' of the dataset.
+  Hint: Tippen Sie head(flags) um die ersten sechs Zeilen des Datensatzes zu sehen.
 
 - Class: cmd_question
-  Output: You may need to scroll up to see all of the output. Now, let's check out the dimensions of the dataset using dim(flags).
+  Output: Wahrscheinlich müssen Sie hochscrollen um den kompletten Output zu sehen. Untersuchen Sie jetzt die Dimensionen des Datensatzes mit dim(flags).
   CorrectAnswer: dim(flags)
   AnswerTests: omnitest(correctExpr='dim(flags)')
-  Hint: Type dim(flags) to view the dimensions of the dataset.
+  Hint: Tippen Sie dim(flags) in die Konsole.
 
 - Class: text
-  Output: This tells us that there are 194 rows, or observations, and 30 columns, or variables. Each observation is a country and each variable describes some characteristic of that country or its flag. To open a more complete description of the dataset in a separate text file, type viewinfo() when you are back at the prompt (>).
+  Output: Der Output sagt uns, dass es 194 Zeilen bzw. Beobachtungen und 30 Spalten bzw. Variablen gibt. Jede Beobachtung ist eine Nation und jede Variable beschreibt eine Eigenschaft des Landes oder seiner Flagge. Um eine genauere Beschreibung (in englischer Sprache) zu bekommen, können Sie viewinfo() tippen, sobald die Eingabeaufforderung erscheint (>).
 
 - Class: cmd_question
-  Output: As with any dataset, we'd like to know in what format the variables have been stored. In other words, what is the 'class' of each variable? What happens if we do class(flags)? Try it out.
+  Output: Wie bei jedem Datensatz interessiert uns, in welchem Format die Variablen gespeichert wurden bzw. zu welcher Kategorie die Variablen gehören. Was passiert, wenn wir class(flags) eingeben? Probieren Sie es aus.
   CorrectAnswer: class(flags)
   AnswerTests: omnitest(correctExpr='class(flags)')
-  Hint: Type class(flags) to see what happens.
+  Hint: Tippen Sie class(flags) um zu sehen, was passiert. 
 
 - Class: text
-  Output: That just tells us that the entire dataset is stored as a 'data.frame', which doesn't answer our question. What we really need is to call the class() function on each individual column. While we could do this manually (i.e. one column at a time) it's much faster if we can automate the process. Sounds like a loop!
+  Output: Wir erfahren nur, dass der ganze Datensatz in Form eines 'data frame' gespeichert ist, was nicht unsere Frage beantwortet. Stattdessen brauchen wir das Ergebnis, wenn die Funktion class() auf jede einzelne Spalte des Datensatzes angewendet wird. Obwohl wir dies manuell machen könnten (also mit jedem Befehl nur eine Spalte untersuchen), erhalten wir das Ergebnis viel schneller, wenn wir den Prozess automatisieren können. Klingt wie eine Programmschleife!
 
 - Class: text
-  Output: The lapply() function takes a list as input, applies a function to each element of the list, then returns a list of the same length as the original one. Since a data frame is really just a list of vectors (you can see this with as.list(flags)), we can use lapply() to apply the class() function to each column of the flags dataset. Let's see it in action!
+  Output: Die Funktion lapply() nimmt eine Liste als Input, wendet eine Funktion auf jedes Element der Liste an und gibt dann eine Liste derselben Länge wie die Originalliste aus. Da ein 'data frame' nichts anderes ist als eine Liste von Vektoren (Sie können dies mit dem Befehl as.list(flags) prüfen), können wir lapply() nutzen, um die Funktion class() auf jede Spalte des Datensatzes anzuwenden. Schauen wir uns das in Aktion an!
 
 - Class: cmd_question
-  Output: Type cls_list <- lapply(flags, class) to apply the class() function to each column of the flags dataset and store the result in a variable called cls_list. Note that you just supply the name of the function you want to apply (i.e. class), without the usual parentheses after it.
+  Output: Tippen Sie cls_list <- lapply(flags, class) um die Funktion class() auf jede Spalte des Datensatzes anzuwenden und das Ergebnis in der Variable cls_list zu speichern. Beachten Sie, dass Sie nur den Namen der Funktion, die Sie anwenden wollen, eingeben - ohne die üblichen Klammern.
   CorrectAnswer: cls_list <- lapply(flags, class)
   AnswerTests: omnitest(correctExpr='cls_list <- lapply(flags, class)')
-  Hint: Type cls_list <- lapply(flags, class) to apply the class() function to each column of our dataset and store the result in a variable called cls_list.
+  Hint: Tippen Sie cls_list <- lapply(flags, class) um die Funktion class() auf jede Spalte des Datensatzes anzuwenden und das Ergebnis in der Variable cls_list zu speichern.
 
 - Class: cmd_question
-  Output: Type cls_list to view the result.
+  Output: Tippen Sie cls_list um sich das Ergebnis anzusehen.
   CorrectAnswer: cls_list
   AnswerTests: omnitest(correctExpr='cls_list')
-  Hint: Type cls_list to view the result.
+  Hint: Tippen Sie cls_list um sich das Ergebnis anzusehen.
 
 - Class: cmd_question
-  Output: The 'l' in 'lapply' stands for 'list'. Type class(cls_list) to confirm that lapply() returned a list.
+  Output: Das 'lÄ in 'lapply' steht für 'list' (Liste). Tippen Sie class(cls_list) um sich zu versichern, dass lapply() eine Liste ausgibt.
   CorrectAnswer: class(cls_list)
   AnswerTests: omnitest(correctExpr='class(cls_list)')
-  Hint: Type class(cls_list) to confirm that lapply() returned a list.
+  Hint: Tippen Sie class(cls_list) um sich zu versichern, dass lapply() eine Liste ausgibt.
 
 - Class: text
-  Output: As expected, we got a list of length 30 -- one element for each variable/column. The output would be considerably more compact if we could represent it as a vector instead of a list.
+  Output: Wie erwartet haben wir eine Liste der Länge 30 erhalten - ein Element für jede Variable/Spalte. Der Output wäre erheblich kompakter, wenn wir das Ergebnis als Vektor und nicht als Liste erhalten würden.
 
 - Class: cmd_question
-  Output: You may remember from a previous lesson that lists are most helpful for storing multiple classes of data. In this case, since every element of the list returned by lapply() is a character vector of length one (i.e. "integer" and "vector"), cls_list can be simplified to a character vector. To do this manually, type as.character(cls_list).
+  Output: Sie erinnern sich vielleicht daran, dass Listen vor allem hilfreich sind, um Daten verschiedener Kategorien zu speichern. In diesem Fall kann, da jedes Element der Ergebnisliste ein 'character vector' der Länge 1 ist, cls_list zu einem 'character vector' vereinfacht werden. Um dies manuell zu machen, tippen Sie as.character(cls_list) in das Eingabefeld.
   CorrectAnswer: as.character(cls_list)
   AnswerTests: omnitest(correctExpr='as.character(cls_list)')
-  Hint: Type as.character(cls_list) to coerce cls_list to a character vector.
+  Hint: Tippen Sie as.character(cls_list) um cls_list in einen 'character vector' zu verwandeln.
 
 - Class: cmd_question
-  Output: sapply() allows you to automate this process by calling lapply() behind the scenes, but then attempting to simplify (hence the 's' in 'sapply') the result for you. Use sapply() the same way you used lapply() to get the class of each column of the flags dataset and store the result in cls_vect. If you need help, type ?sapply to bring up the documentation.
+  Output: sapply() erlaubt Ihnen, diesen Prozess zu automatisieren, indem sie lapply() anwendet und dann versucht, das Ergebnis für Sie zu vereinfachen (daher das 's' von 'to simplify' in 'sapply'). Nutzen Sie sapply() auf dieselbe Art und Weise wie lapply, um die Kategorie jeder Variable des Datensatzes zu bekommen und speichern Sie das Ergebnis in cls_vect. Wenn Sie Hilfe benötigen, rufen Sie die Dokumentation auf (?sapply).
   CorrectAnswer: cls_vect <- sapply(flags, class)
   AnswerTests: omnitest(correctExpr='cls_vect <- sapply(flags, class)')
-  Hint: Type cls_vect <- sapply(flags, class) to store the column classes in a character vector called cls_vect.
+  Hint: Tippen Sie cls_vect <- sapply(flags, class) um die Kategorien der Variablen/Spalten in einem Vektor namens cls_vect zu speichern.
 
 - Class: cmd_question
   Output: Use class(cls_vect) to confirm that sapply() simplified the result to a character vector.
