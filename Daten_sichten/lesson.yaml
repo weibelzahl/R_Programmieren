@@ -55,7 +55,7 @@
   Hint: object.size(plants) sagt Ihnen, wie viel Speicherplatz der Datensatz benötigt.
 
 - Class: cmd_question
-  Output: "Nun, da wir ein Gefühl für die Form und Größe des Datensatzes haben, wollen wir ein Gefühl dafür gewinnen, welche Informationen der Datensatz enthält. names(plants) gibt Ihnen einen 'character vector' (also einen Vektor, der Buchstaben enthält) der Spalten-/Variablennamen. Versuchen Sie es!"
+  Output: "Nun, da wir ein Gefühl für die Form und Größe des Datensatzes haben, wollen wir uns anschauen, welche Informationen der Datensatz enthält. names(plants) gibt Ihnen einen Vektor von Zeichenketten der Spalten-/Variablennamen. Versuchen Sie es!"
   CorrectAnswer: names(plants)
   AnswerTests: omnitest(correctExpr='names(plants)')
   Hint: names(plants) erstellt Ihnen einen Vektor der Spaltennamen.

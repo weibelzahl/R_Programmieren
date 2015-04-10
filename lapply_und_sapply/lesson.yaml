@@ -70,10 +70,10 @@
   Output: Wie erwartet haben wir eine Liste der Länge 30 erhalten - ein Element für jede Variable/Spalte. Der Output wäre erheblich kompakter, wenn wir das Ergebnis als Vektor und nicht als Liste erhalten würden.
 
 - Class: cmd_question
-  Output: Sie erinnern sich vielleicht daran, dass Listen vor allem hilfreich sind, um Daten verschiedener Kategorien zu speichern. In diesem Fall kann, da jedes Element der Ergebnisliste ein 'character vector' der Länge 1 ist, cls_list zu einem 'character vector' vereinfacht werden. Um dies manuell zu machen, tippen Sie as.character(cls_list) in das Eingabefeld.
+  Output: Sie erinnern sich vielleicht daran, dass Listen vor allem hilfreich sind, um Daten verschiedener Kategorien zu speichern. In diesem Fall kann, da jedes Element der Ergebnisliste ein Vektor aus Zeichen der Länge 1 ist, cls_list zu einem einzigen Vektor von Zeichenketten vereinfacht werden. Um dies manuell zu machen, tippen Sie as.character(cls_list) in das Eingabefeld.
   CorrectAnswer: as.character(cls_list)
   AnswerTests: omnitest(correctExpr='as.character(cls_list)')
-  Hint: Tippen Sie as.character(cls_list) um cls_list in einen 'character vector' zu verwandeln.
+  Hint: Tippen Sie as.character(cls_list) um cls_list in einen Vektor aus Zeichen zu verwandeln.
 
 - Class: cmd_question
   Output: sapply() erlaubt Ihnen, diesen Prozess zu automatisieren, indem sie lapply() anwendet und dann versucht, das Ergebnis für Sie zu vereinfachen (daher das 's' von 'to simplify' in 'sapply'). Nutzen Sie sapply() auf dieselbe Art und Weise wie lapply, um die Kategorie jeder Variable des Datensatzes zu bekommen und speichern Sie das Ergebnis in cls_vect. Wenn Sie Hilfe benötigen, rufen Sie die Dokumentation auf (?sapply).
@@ -82,10 +82,10 @@
   Hint: Tippen Sie cls_vect <- sapply(flags, class) um die Kategorien der Variablen/Spalten in einem Vektor namens cls_vect zu speichern.
 
 - Class: cmd_question
-  Output: Nutzen Sie den Befehl class(cls_vect) um zu überprüfen, dass sapply() das Ergebnis zu einem 'character vector' vereinfacht hat.
+  Output: Nutzen Sie den Befehl class(cls_vect) um zu überprüfen, dass sapply() das Ergebnis zu einem einzigen Vektor von Zeichenketten vereinfacht hat.
   CorrectAnswer: class(cls_vect)
   AnswerTests: omnitest(correctExpr='class(cls_vect)')
-  Hint: Tippen Sie class(cls_vect) in die Konsole, um zu bestätigen, dass sapply() einen 'character vector' ausgegeben hat.
+  Hint: Tippen Sie class(cls_vect) in die Konsole, um zu bestätigen, dass sapply() einen Vektor aus Zeichen ausgegeben hat.
 
 - Class: text
   Output: Generell gilt, dass sapply() einen Vektor ausgibt, wenn das Ergebnis von lapply() eine Liste ist, in der jedes Element eine Länge von 1 hat. Wenn das Ergebnis eine Liste ist, in der jedes Element dieselbe Länge (>1) hat, gibt sapply() eine Matrix aus. Wenn sapply() aus dem Ergebnis nicht schlau wird, gibt es einfach eine Liste aus - der Output unterscheidet sich dann also nicht von dem bei der Anwendung von lapply().

@@ -118,10 +118,10 @@
   Hint: Tippen Sie cbind(patients, my_matrix), um die Namen der Patienten der Matrix hinzuzufügen.
 
 - Class: text
-  Output: Etwas ist faul mit unserem Ergebnis! Es scheint so, dass das Verbinden eines 'character vector' mit einer Matrix aus Zahlen dazu führt, dass alles in Anführungszeichen gesetzt wird. Das heißt, dass wir nun eine Matrix mit Zeichenfolgen haben, was nicht gut ist.
+  Output: Etwas ist faul mit unserem Ergebnis! Es scheint so, dass das Verbinden eines Vektors aus Zeichen mit einer Matrix aus Zahlen dazu führt, dass alles in Anführungszeichen gesetzt wird. Das heißt, dass wir nun eine Matrix von Zeichenketten haben, was nicht gut ist.
 
 - Class: text
-  Output: Wie am Anfang dieser Übung bereits erwähnt, enthalten Matrizen nur Daten EINER Kategorie. Wenn wir einen 'character vector' mit einer numerischen Matrix verbinden, ist R deswegen gezwungen, die Zahlen in Zeichen zu 'zwingen' bzw. zu verwandeln - von daher die Anführungszeichen.
+  Output: Wie am Anfang dieser Übung bereits erwähnt, enthalten Matrizen nur Daten EINER Kategorie. Wenn wir einen Vektor aus Zeichen mit einer numerischen Matrix verbinden, ist R deswegen gezwungen, die Zahlen in Zeichen zu 'zwingen' bzw. zu verwandeln - von daher die Anführungszeichen.
 
 - Class: text
   Output: Dieser Prozess geschieht automatisch ('implicit coercion') - ohne dass wir R den Befehl dazu geben.

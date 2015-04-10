@@ -40,19 +40,19 @@
   Hint: Tippen Sie vapply(flags, unique, numeric(1)) und danach ok() um mit der nächsten Frage fortzufahren.
 
 - Class: cmd_question
-  Output: In der letzten Übung haben wir gesehen, dass sapply(flags, class) uns einen 'character vector' ausgibt, der für jede Spalte (Variable) des Datensatzes die entsprechende Kategorie angibt. Schauen Sie sich das Ergebnis erneut an.
+  Output: In der letzten Übung haben wir gesehen, dass sapply(flags, class) uns einen Vektor aus Zeichen ausgibt, der für jede Spalte (Variable) des Datensatzes die entsprechende Kategorie angibt. Schauen Sie sich das Ergebnis erneut an.
   CorrectAnswer: sapply(flags, class)
   AnswerTests: omnitest(correctExpr="sapply(flags, class)")
-  Hint: Tippen Sie sapply(flags, class) um einen 'character vector' der Kategorien, in die die jeweiligen Spalten fallen, zu erhalten.
+  Hint: Tippen Sie sapply(flags, class) um einen Vektor aus Zeichen der Kategorien, in die die jeweiligen Spalten fallen, zu erhalten.
 
 - Class: cmd_question
-  Output: Wenn wir explizit das erwartete Format des Ergebnisses angeben möchten, können wir den Befehl vapply(flags, class, character(1)) nutzen. Das Argument 'character(1)' sagt R, dass wir erwarten, dass die Funktion class uns für jede Spalte, auf die sie angewendet wird, einen 'character vector' der Länge 1 ausgibt. Probieren Sie den Befehl jetzt aus.
+  Output: Wenn wir explizit das erwartete Format des Ergebnisses angeben möchten, können wir den Befehl vapply(flags, class, character(1)) nutzen. Das Argument 'character(1)' sagt R, dass wir erwarten, dass die Funktion class uns für jede Spalte, auf die sie angewendet wird, einen Vektor von Zeichenketten der Länge 1 ausgibt. Probieren Sie den Befehl jetzt aus.
   CorrectAnswer: vapply(flags, class, character(1))
   AnswerTests: omnitest(correctExpr="vapply(flags, class, character(1))")
-  Hint: Nutzen Sie den Befehl vapply(flags, class, character(1)) um einen 'character vector' der Kategorien der Spalten (Variablen) zu erhalten.
+  Hint: Nutzen Sie den Befehl vapply(flags, class, character(1)) um einen Vektor von Zeichenketten der Kategorien der Spalten (Variablen) zu erhalten.
 
 - Class: text
-  Output: Beachten Sie, dass - da unsere Erwartung richtig war - die Ergebnisse von vapply() und sapply() identisch sind. Wir erhalten jeweils einen 'character vector' der Kategorien der Spalten.
+  Output: Beachten Sie, dass - da unsere Erwartung richtig war - die Ergebnisse von vapply() und sapply() identisch sind. Wir erhalten jeweils einen Vektor aus Zeichen der Kategorien der Spalten.
 
 - Class: text
   Output: Sie denken, wahrscheinlich, dass vapply() "sicherer" als sapply() ist, da es Sie zwingt, das erwartete Format anzugeben, anstatt R "raten" zu lassen. Zudem ist die Ausführung des Befehls vapply() bei großen Datensätzen oft schneller als die des Befehls sapply(). Wenn Sie interaktiv arbeiten, spart Ihnen sapply() allerdings einiges an Tipparbeit und wird in der Regel gut genug sein.
