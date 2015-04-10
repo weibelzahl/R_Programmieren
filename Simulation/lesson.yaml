@@ -165,4 +165,7 @@
   Output: Alle üblichen Wahrscheinlichkeitsverteilungen sind in R vorhanden, unter anderem die Exponentialfunktion (rexp()), die Chi-Quadrat-Funktion (rchisq()), die Gamma-Funktion (rgamma()), usw. 
 
 - Class: text
-  Output: Simulation ist ein weites Feld und wir haben nur an der Oberfläche von dem, was möglich ist, gekratzt. Ich ermutige Sie, die Wahrscheinlichkeitsfunktionen auf eigene Faust weiter auszuprobieren!
+  Output: Simulation ist ein weites Feld und wir haben nur an der Oberfläche von dem, was möglich ist, gekratzt. Ich möchte Sie ermutigen, die Wahrscheinlichkeitsfunktionen auf eigene Faust weiter auszuprobieren!
+  
+- Class: text
+  Output: Herzlichen Glückwunsch, Sie haben soeben die Anforderungen für die Einsendeaufgaben zum Fernlehrbrief  `Statistik 1 - Wahrscheinlichkeitstheorie - Verteilungen und Stichprobenverteilungen` (Aufgabe 1) erfüllt. Nennen Sie in Ihrer Einsendung unter Aufgabe 1 einfach das Codewort `StatistikeR`.  

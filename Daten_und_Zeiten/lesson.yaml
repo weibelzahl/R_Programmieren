@@ -191,6 +191,3 @@
 
 - Class: text
   Output: In this lesson, you learned how to work with dates and times in R. While it is important to understand the basics, if you find yourself working with dates and times often, you may want to check out the lubridate package by Hadley Wickham.
-  
-- Class: text
-  Output: Herzlichen Glückwunsch, Sie haben soeben die Anforderungen für die Einsendeaufgaben zum Fernlehrbrief  `Statistik 1 - Wahrscheinlichkeitstheorie - Verteilungen und Stichprobenverteilungen` (Aufgabe 1) erfüllt. Nennen Sie in Ihrer Einsendung unter Aufgabe 1 einfach das Codewort `StatistikeR`.
