@@ -122,7 +122,7 @@
   Output: 'Bevor wir uns das Ergebnis ansehen: welchen Inhalt hat die Variable my_sqrt wohl?'
   CorrectAnswer: ein Vektor der Länge 3
   AnswerChoices: ein Vektor der Länge 3; eine einzelne Zahl (also ein Vektor der Länge 1); ein Vektor der Länge 0 (also ein leerer Vektor)
-  AnswerTests: omnitest(correctVal='a vector of length 3')
+  AnswerTests: omnitest(correctVal='ein Vektor der Länge 3')
   Hint: 'Erinnern Sie sich noch wie R mit vorherigen Vektoroperationen umgegangen ist? Ein Element nach dem anderen.'
 
 - Class: cmd_question
