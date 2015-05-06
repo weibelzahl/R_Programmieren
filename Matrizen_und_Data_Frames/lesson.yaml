@@ -73,7 +73,7 @@
   Hint: Tippen Sie class(my_vector) in das Eingabefeld.
 
 - Class: cmd_question
-  Output: my_vector ist jetzt also tatsächlich eine Matrix. Wir sollten sie in einer neuen Variable speicher, die uns hilft, uns an die Kategorie von my_vector zu erinnern. Speichern Sie my_vector in einer neuen Variable namens my_matrix.
+  Output: my_vector ist jetzt also tatsächlich eine Matrix. Wir sollten sie in einer neuen Variable speichern, die uns hilft, uns an die Kategorie von my_vector zu erinnern. Speichern Sie my_vector in einer neuen Variable namens my_matrix.
   CorrectAnswer: my_matrix <- my_vector
   AnswerTests: omnitest(correctExpr='my_matrix <- my_vector')
   Hint: "Da wir nicht einfach den Namen unserer Variablen my_vector ändern können, weisen wir den dessen Wert einer neuen Variablen zu: my_matrix <- my_vector"
@@ -106,7 +106,7 @@
   Output: Wir wollen nun die Zeilen beschriften, sodass wir wissen, welche Nummern zu welchen Patienten gehören. Eine Möglichkeit ist, der Matrix eine Spalte hinzuzufügen, die die Namen aller vier Personen enthält.
 
 - Class: cmd_question
-  Output: Beginnen wir damit, einen Vektor mit den Namen unserer Patienten - Bill, Gina, Kelly und Sean - zu erstellen. Erinnern Sie sich daran, dass (doppelte) Anführungszeichen R sagen, dass etwas eine Zeichenfolge ist. Speichern Sie das Ergebnis in einer Variablen namens 'patients'.
+  Output: Beginnen wir damit, einen Vektor mit den Namen unserer Patienten - Bill, Gina, Kelly und Sean - zu erstellen. Denken Sie daran, dass (doppelte) Anführungszeichen in R bedeuten, dass etwas eine Zeichenfolge ist. Speichern Sie das Ergebnis in einer Variablen namens 'patients'.
   CorrectAnswer: patients <- c("Bill", "Gina", "Kelly", "Sean")
   AnswerTests: omnitest(correctExpr='patients <- c("Bill", "Gina", "Kelly", "Sean")')
   Hint: Achten Sie darauf, dass jeder Name mit einem Großbuchstaben beginnt und speichern Sie das Ergebnis in einer Variablen namens 'patients'. Und vertauschen Sie nicht die Reihenfolge der Patienten! Das wäre eine Katastrophe!
