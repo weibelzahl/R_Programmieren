@@ -3,7 +3,7 @@
   Lesson: Looking at Data
   Author: Nick Carchedi
   Type: Standard
-  Organization: JHU Biostat
+  Organization: JHU Biostat; Translation by PFH
   Version: 2.2.11
 
 - Class: text
@@ -121,4 +121,7 @@
   Output: In dieser Übung haben Sie gelernt, wie Sie ein Gefühl für die Struktur und den Inhalt eines neuen Datensatzes gewinnen, indem Sie eine Sammlung einfacher und nützlicher Funktionen verwenden. Wenn Sie sich zu Beginn die Zeit für diese Sichtung Ihrer Daten nehmen, kann Ihnen das später bei der Datenanalyse viel Zeit und Frustration sparen!
 
 - Class: text
-  Output: Herzlichen Glückwunsch, Sie haben soeben die Anforderungen für die Einsendeaufgaben zum Fernlehrbrief  `Statistik 1 - Deskriptive Statistik - Bivariate Deskriptive Statistik` (Aufgabe 1) erfüllt. Nennen Sie in Ihrer Einsendung unter Aufgabe 1 einfach das Codewort `MeisteR`.
+  Output: 'Herzlichen Glückwunsch, Sie haben soeben die Anforderungen für die Einsendeaufgaben zum Fernlehrbrief  `Statistik 1 - Deskriptive Statistik - Bivariate Deskriptive Statistik` (Aufgabe 1) erfüllt. Nennen Sie in Ihrer Einsendung unter Aufgabe 1 einfach das Codewort `MeisteR`.'
+  
+- Class: text
+  Output: 'Tipp: Schreiben Sie sich das Codewort jetzt auf. Weiterhin viel Spaß mit swirl!'    

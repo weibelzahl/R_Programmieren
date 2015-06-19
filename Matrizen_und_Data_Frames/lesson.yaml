@@ -3,7 +3,7 @@
   Lesson: Matrices and Data Frames
   Author: Nick Carchedi
   Type: Standard
-  Organization: JHU Biostat
+  Organization: JHU Biostat; Translation by PFH
   Version: 2.2.0
 
 - Class: text
@@ -179,3 +179,6 @@
 
 - Class: text
   Output: 'Herzlichen Glückwunsch, Sie haben soeben die Anforderungen für die Einsendeaufgaben zum Fernlehrbrief  `Statistik 1 - Deskriptive Statistik - Grundlagen` (Aufgabe 3) erfüllt. Nennen Sie in Ihrer Einsendung unter Aufgabe 3 einfach das Codewort `KönneR`.'
+  
+- Class: text
+  Output: 'Tipp: Schreiben Sie sich das Codewort jetzt auf.'  

@@ -3,7 +3,7 @@
   Lesson: Simulation
   Author: Nick Carchedi
   Type: Standard
-  Organization: JHU Biostat
+  Organization: JHU Biostat; Translation by PFH
   Version: 2.2.11
 
 - Class: text
@@ -168,4 +168,7 @@
   Output: Simulation ist ein weites Feld und wir haben nur an der Oberfläche von dem, was möglich ist, gekratzt. Ich möchte Sie ermutigen, die Wahrscheinlichkeitsfunktionen auf eigene Faust weiter auszuprobieren!
   
 - Class: text
-  Output: Herzlichen Glückwunsch, Sie haben soeben die Anforderungen für die Einsendeaufgaben zum Fernlehrbrief  `Statistik 1 - Wahrscheinlichkeitstheorie - Verteilungen und Stichprobenverteilungen` (Aufgabe 1) erfüllt. Nennen Sie in Ihrer Einsendung unter Aufgabe 1 einfach das Codewort `StatistikeR`.  
+  Output: 'Herzlichen Glückwunsch, Sie haben soeben die Anforderungen für die Einsendeaufgaben zum Fernlehrbrief  `Statistik 1 - Wahrscheinlichkeitstheorie - Verteilungen und Stichprobenverteilungen` (Aufgabe 1) erfüllt. Nennen Sie in Ihrer Einsendung unter Aufgabe 1 einfach das Codewort `StatistikeR`.'
+
+- Class: text
+  Output: 'Tipp: Schreiben Sie sich das Codewort jetzt auf. Das war das letzte Kapitel dieses Kurses.'    

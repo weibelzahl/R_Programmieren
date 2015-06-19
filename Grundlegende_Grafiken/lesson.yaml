@@ -3,7 +3,7 @@
   Lesson: Base Graphics
   Author: David Kane
   Type: Standard
-  Organization: Williams College
+  Organization: Williams College; Translation by PFH
   Version: 0.1.1
 
 - Class: text
@@ -201,4 +201,7 @@
   Um tiefer in das Feld der Grafikerstellung einzusteigen, ist das Packet ggplot2 zu empfehlen.'
 
 - Class: text
-  Output: Herzlichen Glückwunsch, Sie haben soeben die Anforderungen für die Einsendeaufgaben zum Fernlehrbrief  `Statistik 1 - Deskriptive Statistik - Das lineare Modell` (Aufgabe 1) erfüllt. Nennen Sie in Ihrer Einsendung unter Aufgabe 1 einfach das Codewort `ÜbeRfliegeR`.
+  Output: 'Herzlichen Glückwunsch, Sie haben soeben die Anforderungen für die Einsendeaufgaben zum Fernlehrbrief  `Statistik 1 - Deskriptive Statistik - Das lineare Modell` (Aufgabe 1) erfüllt. Nennen Sie in Ihrer Einsendung unter Aufgabe 1 einfach das Codewort `ÜbeRfliegeR`.'
+  
+- Class: text
+  Output: 'Tipp: Schreiben Sie sich das Codewort jetzt auf.'
