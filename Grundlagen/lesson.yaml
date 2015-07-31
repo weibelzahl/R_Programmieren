@@ -1,4 +1,4 @@
-﻿- Class: meta
+- Class: meta
   Course: R Programming
   Lesson: Grundlagen
   Author: Nick Carchedi
@@ -40,7 +40,7 @@
   Output: 'Um in R einer Variablen einen Wert zuzuweisen, verwendet man den Zuweisungsoperator, also einfach das Zeichen ''keiner als'' und dann ein ''minus''-Zeichen. Das sieht so aus: <-'
 
 - Class: text
-  Output: Stellen Sie sich den Zuweisungsoperator einfach als Pfeil vor. Sie weisen den Wert auf der rechten Seite der Variable auf der linen Seite zu.
+  Output: Stellen Sie sich den Zuweisungsoperator einfach als Pfeil vor. Sie weisen den Wert auf der rechten Seite der Variablen auf der linken Seite zu.
 
 - Class: cmd_question
   Output: Um nun das Ergebnis von 5 + 7 einer neuen Variable namens x zuzuweisen, tippen Sie x <- 5 + 7. Sprich 'x erhält den Wert 5 plus 7'. Probieren Sie das aus.

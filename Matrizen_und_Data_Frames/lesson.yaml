@@ -58,7 +58,7 @@
   Hint: Der Befehl attributes(my_vector) zeigt Ihnen alle Eigenschaften des Objekts my_vector.
 
 - Class: text
-  Output: Wie im Matheunterricht, wenn wir es mit zweidimensionalen Objekten (z.B. einer rechtwinkligen Tabelle) zu tun haben, bezeichnet die erste Ziffer die Anzahl der Reihen, die zweite die der Spalten. Deswegen haben wir my_vector wir Zeilen und 5 Spalten gegeben.
+  Output: Wie im Matheunterricht, wenn wir es mit zweidimensionalen Objekten (z.B. einer rechtwinkligen Tabelle) zu tun haben, bezeichnet die erste Ziffer die Anzahl der Reihen, die zweite die der Spalten. Deswegen hat my_vector vier Zeilen und fünf Spalten gegeben.
 
 - Class: cmd_question
   Output: Moment! Das klingt nicht mehr nach einem Vektor. Nun, es ist kein Vektor mehr. Jetzt haben wir eine Matrix. Schauen Sie sich den Inhalt von my_vector an, um zu sehen, wie die Variable jetzt aussieht.
@@ -88,7 +88,7 @@
   Hint: "Der gesuchte Befehl ist: ?matrix"
 
 - Class: cmd_question
-  Output: "Schauen Sie sich die Dokumentation an und versuchen Sie, eine Matrix mit denselben Zahlen (1-20) und Dimensionen (4 Zeilen, 5 Spalten) mit der Funktion matrix() zu erstellen. Speicher Sie das Ergebnis in einer Variablen namens my_matrix2. Hinweis: Sie benötigen drei Argumente - das erste spezifiziert den Inhalt der Matrix, das zweite die Anzahl der Zeilen, das dritte die Anzahl der Spalten."
+  Output: "Schauen Sie sich die Dokumentation an und versuchen Sie, eine Matrix mit denselben Zahlen (1-20) und Dimensionen (4 Zeilen, 5 Spalten) mit der Funktion matrix() zu erstellen. Speichern Sie das Ergebnis in einer Variablen namens my_matrix2. Hinweis: Sie benötigen drei Argumente - das erste spezifiziert den Inhalt der Matrix, das zweite die Anzahl der Zeilen, das dritte die Anzahl der Spalten."
   CorrectAnswer: my_matrix2 <- matrix(1:20, nrow=4, ncol=5)
   AnswerTests: calculates_same_value('matrix(1:20, nrow=4, ncol=5)'); expr_creates_var('my_matrix2')
   Hint: "Der gesuchte Befehl lautet: my_matrix2 <- matrix(1:20, nrow=4, ncol=5)"
@@ -118,7 +118,7 @@
   Hint: Tippen Sie cbind(patients, my_matrix), um die Namen der Patienten der Matrix hinzuzufügen.
 
 - Class: text
-  Output: Etwas ist faul mit unserem Ergebnis! Es scheint so, dass das Verbinden eines Vektors aus Zeichen mit einer Matrix aus Zahlen dazu führt, dass alles in Anführungszeichen gesetzt wird. Das heißt, dass wir nun eine Matrix von Zeichenketten haben, was nicht gut ist.
+  Output: Etwas ist faul an unserem Ergebnis! Es scheint so, dass das Verbinden eines Vektors aus Zeichen mit einer Matrix aus Zahlen dazu führt, dass alles in Anführungszeichen gesetzt wird. Das heißt, dass wir nun eine Matrix von Zeichenketten haben, was nicht gut ist.
 
 - Class: text
   Output: Wie am Anfang dieser Übung bereits erwähnt, enthalten Matrizen nur Daten EINER Kategorie. Wenn wir einen Vektor aus Zeichen mit einer numerischen Matrix verbinden, ist R deswegen gezwungen, die Zahlen in Zeichen zu 'zwingen' bzw. zu verwandeln - von daher die Anführungszeichen.

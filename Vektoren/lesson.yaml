@@ -31,7 +31,7 @@
   Hint: Geben Sie tf <- num_vect < 1 ein, um das Ergebnis von num_vect < 1 der Variablen tf zuzuweisen. Anführungszeichen oder Klammern sind nicht notwendig.
 
 - Class: mult_question
-  Output: "Raten Sie: Welche Form hat tf jetzt?"
+  Output: "Überlegen Sie: Welche Form hat tf jetzt?"
   CorrectAnswer: ein Vektor mit vier logischen Werten
   AnswerChoices: ein Vektor mit vier logischen Werten; ein einzelner logischer Wert
   AnswerTests: omnitest(correctVal='ein Vektor mit vier logischen Werten')
@@ -62,8 +62,17 @@
   Output: "Die Zeichen `<` und `>=` in den obigen Beispielen sind sogenannte 'logische Operatoren'. Davon gibt es noch mehr: `>`, `<=`, `==` (genau gleich) und `!=` (ungleich)."
 
 - Class: text
-  Output: "Wenn wir zwei solcher logischen Ausdrücke vorliegen haben, nennen wir sie A und B, können wir außerdem fragen: Ist mindestens einer der beiden Ausdrücke wahr? A | B (logisches ODER bzw. Disjunktion). Sind beide Ausdrücke wahr? A & B (logisches UND bzw. Konjunktion). Zu guter Letzt steht !A für die Negation und ist genau dann wahr wenn A den Wert FALSE hat und umgekehrt."
+  Output: "Wenn wir zwei solcher logischen Ausdrücke vorliegen haben, nennen wir sie A und B, können wir außerdem fragen:"
 
+- Class: text
+  Output: "Ist mindestens einer der beiden Ausdrücke wahr? A | B (logisches ODER bzw. Disjunktion)."
+
+- Class: text
+  Output: "Sind beide Ausdrücke wahr? A & B (logisches UND bzw. Konjunktion)."
+  
+- Class: text
+  Output: "Zu guter Letzt steht !A für die Negation und ist genau dann wahr wenn A den Wert FALSE hat und umgekehrt."
+  
 - Class: text
   Output: Diese Operatoren lernt man am Besten anhand von Beispielen. Fangen wir doch gleich mal an.
 

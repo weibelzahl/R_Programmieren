@@ -41,7 +41,7 @@
   Hint: Erinnern Sie sich daran, dass is.na(x) uns sagt, wo die NAs in einem Vektor sind. Wenn wir x auf dieser Grundlage unterteilen, was denken Sie, wird passieren?
 
 - Class: cmd_question
-  Output: Beweisen Sie die Antwort, indem Sie x[is.na(x)] eingeben.
+  Output: Überprüfen Sie die Antwort, indem Sie x[is.na(x)] eingeben.
   CorrectAnswer: x[is.na(x)]
   AnswerTests: omnitest(correctExpr='x[is.na(x)]')
   Hint: Tippen Sie x[is.na(x)], um zu sehen, dass Sie alle NAs bekommen haben, was definitiv nicht das ist, was wir wollen!
@@ -105,10 +105,10 @@
   Hint: Erstellen Sie einen Vektor der Indizes mit c(3,5,7) und setzen Sie diesen in die eckigen Klammern.
 
 - Class: cmd_question
-  Output: Es ist wichtig, dass, wenn wir Vektoren ganzer Zahlen für die Erstellung von Teilmengen von x nutzen, wir innerhalb der menge der Indizes {1, 2, ...,40} bleiben, da x nur 40 Elemente hat. Was passiert, wenn wir nach dem 0. Element von x fragen (d.h. x[0])? Versuchen Sie es!
+  Output: Es ist wichtig, dass, wenn wir Vektoren ganzer Zahlen für die Erstellung von Teilmengen von x nutzen, wir innerhalb der Menge der Indizes {1, 2, ...,40} bleiben, da x nur 40 Elemente hat. Was passiert, wenn wir nach dem 0. Element von x fragen (d.h. x[0])? Versuchen Sie es!
   CorrectAnswer: x[0]
   AnswerTests: omnitest(correctExpr='x[0]')
-  Hint: Geben Sie x[0] ein und schauen Sie, wass passiert, wenn Sie nach einem nicht definiertem Element fragen. 
+  Hint: Geben Sie x[0] ein und schauen Sie, was passiert, wenn Sie nach einem nicht definiertem Element fragen. 
 
 - Class: cmd_question
   Output: Wie Sie wahrscheinlich erwartet haben, bekommen wir nichts Nützliches. Unglücklicherweise hindert uns R nicht daran, dies zu machen. Was passiert, wenn wir nach dem 3000. Element von x fragen? Probieren Sie es aus.
@@ -129,7 +129,7 @@
   Hint: Probieren Sie den Befehl x[c(-2, -10)] aus.
 
 - Class: cmd_question
-  Output: Ein kurzer Weg mehrere negative Zahlen vorzugeben ist, das Minuszeichen vor einen Vektor mit positiven Zahlen zu schreiben. Verwenden Sie x[c(2, 10)], um genau dasselbe Ergebnis zu bekommen.
+  Output: Eine einfache Möglichkeit, mehrere negative Zahlen vorzugeben ist, das Minuszeichen vor einen Vektor mit positiven Zahlen zu schreiben. Verwenden Sie x[-c(2, 10)], um genau dasselbe Ergebnis zu bekommen.
   CorrectAnswer: x[-c(2, 10)]
   AnswerTests: omnitest(correctExpr='x[-c(2, 10)]')
   Hint: Nutzen Sie x[-c(2, 10)], um die Dinge etwas zu vereinfachen. 
@@ -144,7 +144,7 @@
   Hint: Erstellen Sie einen benannten Vektor mit vect <- c(foo = 11, bar = 2, norf = NA).
 
 - Class: cmd_question
-  Output: Wenn wir uns vect in der Konsole anzeigen lassen, sehen wir, dass jedes Element einen Namen hat. Probieren Sie es aus!
+  Output: Wenn wir uns den Vektor vect anzeigen lassen, ist zu sehen, dass jedes Element einen Namen hat. Probieren Sie es aus!
   CorrectAnswer: vect
   AnswerTests: omnitest(correctExpr='vect')
   Hint: Tippen Sie vect, um den Inhalt des Vektors zu sehen.
