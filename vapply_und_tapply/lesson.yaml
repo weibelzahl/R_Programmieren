@@ -97,7 +97,7 @@
   Hint: Tippen Sie tapply(flags$population, flags$red, summary) in die Konsole.
 
 - Class: mult_question  
-  Output: Was ist die mittlere Einwohnerzahl (in Millionen) der Länder ohne die Farbe Rot in ihrer Flagge?
+  Output: Was ist der Median der Einwohnerzahl (in Millionen) der Länder ohne die Farbe Rot in ihrer Flagge?
   AnswerChoices: 9.0; 4.0; 27.6; 3.0; 22.1; 0.0
   CorrectAnswer: 3.0
   AnswerTests: omnitest(correctVal= '3.0')
