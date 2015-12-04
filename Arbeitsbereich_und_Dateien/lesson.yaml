@@ -99,7 +99,7 @@
 - Class: cmd_question
   Output: Machen Sie nun "testdir" zu Ihrem Arbeitsverzeichnis. Finden Sie heraus, wie das geht.
   CorrectAnswer: setwd("testdir")
-  AnswerTests: any_of_exprs('setwd("testdir")', 'setwd("testdir/")')
+  AnswerTests: any_of_exprs('setwd("testdir")', 'setwd("testdir/")', 'setwd("./testdir")', 'setwd("./testdir/")')
   Hint: Verwenden Sie den Befehl 'setwd("testdir")', um das Arbeitsverzeichnis auf "testdir" zu ändern.
 
 - Class: text
