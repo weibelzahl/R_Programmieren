@@ -7,5 +7,5 @@ options(swirl_is_fun = FALSE)
 
 # activity tracker
 source(file.path(find.package("swirl"),
-                      "Courses/R_Programmieren/activityTracker.R"), 
+                      "Courses/R_Programmieren/ActivityTracker/activityTracker.R"), 
 					  local=TRUE)
