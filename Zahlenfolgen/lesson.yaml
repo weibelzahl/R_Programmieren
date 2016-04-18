@@ -39,7 +39,7 @@
 - Class: cmd_question
   Output: Öffnen Sie nun die Dokumentation des ':' Operators.
   CorrectAnswer: ?`:`
-  AnswerTests: ANY_of_exprs('?`:`', "?':'", '?":"')
+  AnswerTests: any_of_exprs('?`:`', "?':'", '?":"')
   Hint: 'Zum Öffnen der Dokumentation eines Sonderzeichens muss dieses in Anführungszeichen gesetzt werden. Das ist notwendig, um R klar zu machen, dass Sie das Symbol nicht als Befehl verwenden. Die Eingabe sollte also so aussehen: ?":" (auch einfache Anführungszeichen wären erlaubt). Vergessen Sie das Fragezeichen am Anfang nicht.'
 
 - Class: text
