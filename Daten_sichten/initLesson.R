@@ -1,5 +1,6 @@
 # remove motivational message
 options(swirl_is_fun = FALSE)
+options(swirl_language = "german")
 
 # Path to data
 .datapath <- file.path(path.package('swirl'), 'Courses',
