@@ -7,7 +7,3 @@ options(swirl_language = "german")
 # here will show up in the user's workspace when he or she begins
 # the lesson.
 
-# activity tracker
-source(file.path(find.package("swirl"),
-                      "Courses/R_Programmieren/ActivityTracker/activityTracker.R"), 
-					  local=TRUE)
