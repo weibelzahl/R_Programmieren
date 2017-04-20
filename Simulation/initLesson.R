@@ -1,6 +1,6 @@
 # remove motivational message
 options(swirl_is_fun = FALSE)
-options(swirl_language = "german")
+options(swirl_language = "german_formal")
 
 
 # Put initialization code in this file. The variables you create

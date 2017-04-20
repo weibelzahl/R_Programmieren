@@ -1,6 +1,6 @@
 # remove motivational message
 options(swirl_is_fun = FALSE)
-options(swirl_language = "german")
+options(swirl_language = "german_formal")
 
 ### MAY END UP USING THIS AT SOME POINT... ###
 
