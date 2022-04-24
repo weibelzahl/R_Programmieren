@@ -18,3 +18,5 @@ names(plants) <- c('Scientific_Name', 'Duration', 'Active_Growth_Period',
                    'Foliage_Color', 'pH_Min', 'pH_Max',
                    'Precip_Min', 'Precip_Max',
                    'Shade_Tolerance', 'Temp_Min_F')
+
+plants$Duration <- factor(plants$Duration)
